@@ -1,76 +1,86 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
+<form action="<?php echo site_url('report/addreport') ?>" method="post" enctype="multipart/form-data" >
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+    <div class="card shadow mb-3">
+        <div class="card-header">
+         <h5>   Step 1 : Complaint</h5>
+         </div>
+            <div class="card-body">
+                <div class="form-group">
+                   <h6> <b><label for="description">Complaint Report*</label></b> </h6>
+                    <textarea class="form-control" id="description" name="description" placeholder="Report Description" rows="7" ></textarea>
+                     <?= form_error('description', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
+        </div>
+    </div>
 
     <div class="card shadow mb-3">
         <div class="card-header">
-            Report Form
-        </div>
+         <h5>   Step 2 : Reporter Details</h5>
+         </div>
+            <div class="card-body">
+            <div class="form-group">
+            <h6>  <b>  <label for="nik">User ID*</label> </b> </h6>
 
-        <div class="card-body">
-        	<form action="<?php echo site_url('report/addreport') ?>" method="post" enctype="multipart/form-data" >
-                <div class="form-group">
-                    <label for="title">Reporter Name*</label>
+                       <input class="form-control" type="text" name="nik" value="<?=$user['id']?>" readonly>
+                         
+                </div>
+            <div class="form-group">
+            <h6>  <b>  <label for="title">Reporter Name*</label></b> </h6>
                     <input class="form-control" type="text" name="name" value="<?= $user['name']; ?>" readonly>
                 </div>
-                <div class="form-group">
-                    <label for="nik">Reference Number*</label>
-                    SELECT FLOOR(RAND() * 99999) AS random_num
-                    FROM numbers_mst 
-                    WHERE "random_num" NOT IN (SELECT my_number FROM numbers_mst)
-                    LIMIT 1
-                    <?php $uqid = uniqid(); ?>
-                    <txt class="form-control" type="text" name="nik" value="<?= $uqid['nik']; ?>">
-                    <?= form_error('nik', '<small class="text-danger pl-3">', '</small>'); ?>
-                </div>
                 <div class="row">
+                <div class="col-md-4">
+                    
+                        <div class="form-group">
+                <h6>  <b>   <label for="village">House Address*</label>  </b> </h6>
+                            <input class="form-control"
+                             type="text" name="village" placeholder="House Address" value="<?= set_value('village'); ?>">
+                             <?= form_error('village', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
+                    </div>
+
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="rt">RT*</label>
+                 <h6>  <b>  <label for="rt">Age*</label>  </b> </h6>
                             <input class="form-control"
-                            type="number" name="rt" placeholder="Enter RT" value="<?= set_value('rt'); ?>">
+                            type="number" name="rt" placeholder="Age" value="<?= set_value('rt'); ?>">
                             <?= form_error('rt', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="rw">RW*</label>
-                            <input class="form-control"
-                            type="number" name="rw" placeholder="Enter RW" value="<?= set_value('rw'); ?>">
-                            <?= form_error('rw', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="village">Village*</label>
-                            <input class="form-control"
-                            type="text" name="village" placeholder="Village" value="<?= set_value('village'); ?>">
-                            <?= form_error('village', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>                    
-                    </div>
+                
+                    
                 </div>
                 <div class="form-group">
-                    <label for="title">Report Title*</label>
+                <h6>  <b>   <label for="rw">Contact Number*</label> </b> </h6>
+                    <input class="form-control"
+                            type="text" name="rw" placeholder="Contact Number" value="<?= set_value('rw'); ?>">
+                            <?= form_error('rw', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>     
+            </div>
+        </div>
+
+    <div class="card shadow mb-3">
+        <div class="card-header">
+        <h5>   Step 3 : Incident Detials</h5>
+        </div>
+
+        <div class="card-body">
+        
+                             
+                <div class="form-group">
+               <h6>  <b> <label for="title">Report Title*</label>  </b> </h6>
                     <input class="form-control"
                     type="text" name="title" placeholder="Report Title" value="<?= set_value('title'); ?>">
                     <?= form_error('title', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
+           
                 <div class="form-group">
-                    <label for="description">Report Description*</label>
-                    <textarea class="form-control" id="description" name="description" placeholder="Report Description" rows="3"></textarea>
-                    <?= form_error('description', '<small class="text-danger pl-3">', '</small>'); ?>
-                </div>
-                <div class="form-group">
-                    <label for="type">Type of Report</label>
+               <h6>  <b> <label for="type">Type of Report</label>  </b> </h6>
                     <select class="form-control" id="type" name="type">
                         <option value="Corona Virus">Corona Virus</option>
-                        <option value="Health">Health</option>
-                        <option value="Food Aid">Food Aid</option>
-                        <option value="Economy">Economy</option>
-                        <option value="Education">Education</option>
-                        <option value="Agriculture">Agriculture</option>
                         <option value="Drugs">Drugs</option>
                         <option value="Criminal Acts">Criminal Acts</option>
                         <option value="Sexual Harassment">Sexual Harassment</option>
@@ -86,7 +96,7 @@
                     </div>
                 </div>
                 <!-- button save -->
-                <input class="btn btn-success" type="submit" name="btn" value="Report!" />
+                <input class="btn btn-success" type="submit"  name="btn" value="Report!" />
             </form>
         </div>
 

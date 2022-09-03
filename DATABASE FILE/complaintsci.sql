@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2022 at 08:13 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Sep 03, 2022 at 07:32 PM
+-- Server version: 10.1.40-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -43,13 +45,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (27, 'Liam Moore', 'admin@mail.com', 'admin-icn.png', '$2y$10$oPOmdz1Ph/Sob88t5NWcXObo0.EdDa7TY6ZHEYrYG5IHEfMyEtpJ6', 1, 1, 1599504982),
-(32, 'Tiffany O. Errico', 'tiffo@mail.com', 'default.jpg', '$2y$10$pZFHhWCS.Ao.eJEsRIx8e.0HH.UdkNI4w/NdlLSZ8dYYigAbvgaAe', 2, 1, 1599577135),
-(33, 'Marvin D. Behrens', 'marvind@mail.com', 'default.jpg', '$2y$10$4Qc8UQVBZg8mx1/iKcgiHu.zJ9zs4IoIvDPMSMktj6DEyV3pQX7DS', 2, 1, 1599577186),
-(34, 'Nelson L. Perez\n', 'nelsonp@mail.com', 'default.jpg', '$2y$10$NRnnTrxQkRqVK0M/BNXLa.sajWUnF971Hff/Hsyext75qAoDgXWI2', 2, 1, 1599577219),
-(35, 'Seth L. Buckner\n', 'sethb@mail.com', 'default.jpg', '$2y$10$kIB2L/O3/7z7pQmV.XYtAOOBYDZl5TbSWSULg1QTws7TNm1qI/XAm', 2, 1, 1599577247),
-(36, 'Harold B. Loya\n', 'haroldbl@mail.com', 'default.jpg', '$2y$10$wW9vlmU6rjciESA6i1N.we3TMlE6fWG7ICy7LOkZdRxPK7m6j001W', 2, 1, 1599577284),
-(37, 'Christine Moore', 'christine@mail.com', 'default.jpg', '$2y$10$enF4wVVEDEYRSEd.NT7JheUjB6.TBnTWR0q4aJU5JlulO.lHmZb9G', 2, 1, 1651551632),
-(38, 'Michael K. Parker', 'michaelp@mail.com', 'default.jpg', '$2y$10$YP4.s3pZe2RzbYv48fEA5.g04TkeDnxOCq7OSSW5zQf77qaqZYGoK', 2, 1, 1651593601);
+(43, 'Christian Dave Naguit', 'xxxgerenaxxx@gmail.com', 'default.jpg', '$2y$10$TDTrZzIPjY7201vz.UeGmO.T4z2891KvcUJwonkkY0UpXqJouLeR2', 2, 1, 1662030009),
+(44, 'Christian', 'mcdcnaguit@tip.edu.ph', 'default.jpg', '$2y$10$CqjmEIj/1V1rH8YmkmtOEekjV0o0/P4ZFyT16J.A0L55dRUogJXmC', 2, 0, 1662203349),
+(45, 'Christian', 'mefcapudoy@tip.edu.ph', 'default.jpg', '$2y$10$Dwl9eooTKLyoHyBDHlw21Ob0xVxvMNTpaKG3h.gSvCVxMD4cvHXEm', 2, 0, 1662203404);
 
 -- --------------------------------------------------------
 
@@ -125,7 +123,12 @@ CREATE TABLE `user_report` (
 INSERT INTO `user_report` (`id`, `name`, `nik`, `rt`, `rw`, `village`, `title`, `description`, `type`, `date_reported`, `file`) VALUES
 ('5f57a6d18c382', 'Marvin D. Behrens', '0311192857689401', 1, 4, 'Little Ivywood', 'Flood', 'Several residential areas were affected by the flood', 'Natural Disaster', 1646499899, '5f57a6d18c382.jpeg'),
 ('5f57a769d43b0', 'Tiffany O. Errico', '3299000709012871', 2, 4, 'Aucteraden', 'Need Education Help', 'Some children are still not getting a decent education.', 'Education', 1648405450, '5f57a769d43b0.jpg'),
-('6270af1bdf852', 'Christine Moore', '12121', 2, 2, 'as', 'Demo', 'Demo demo demo', 'Corona Virus', 1651552027, '6270af1bdf852.png');
+('6270af1bdf852', 'Christine Moore', '12121', 2, 2, 'as', 'Demo', 'Demo demo demo', 'Corona Virus', 1651552027, '6270af1bdf852.png'),
+('631096ca4f2d2', 'Christian Dave Naguit', '15', 2, 1, 'baler', 'sda', 'asda', 'Health', 1662031562, 'default.jpg'),
+('63135a3eb2a04', 'Christian Dave Naguit', '1662212631775989', 21, 23, 'asdas', 'asdas', 'asdas', 'Sexual Harassment', 1662212670, '63135a3eb2a04.jpg'),
+('631376e11e712', 'Christian Dave Naguit', '1662219991509890', 23, 2112, 'asdas', 'asdasd', 'asdasd', 'Agriculture', 1662220001, 'default.jpg'),
+('631376ee381f5', 'Christian Dave Naguit', '1662220003876098', 23, 23, 'asd', '231', 'asdas', 'Natural Disasters', 1662220014, 'default.jpg'),
+('631380bf5f09f', 'Christian Dave Naguit', '43', 21, 21312, 'asdada', 'asdasd', 'asdada', 'Drugs', 1662222527, 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -175,7 +178,8 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (7, 3, 'Change Password', 'user/changepassword', 'fas fa-fw fa-key', 1),
 (9, 4, 'Report', 'report/addreport', 'fas fa-fw fa-headset', 1),
 (10, 5, 'Report Data', 'report', 'fas fa-fw fa-file-alt', 1),
-(11, 1, 'User Data', 'admin/datamember', 'fas fa-fw fa-users', 1);
+(11, 1, 'User Data', 'admin/datamember', 'fas fa-fw fa-users', 1),
+(12, 4, 'Report History', 'report/user_report_detail', 'fas fa-fw fa-headset', 1);
 
 -- --------------------------------------------------------
 
@@ -196,7 +200,9 @@ CREATE TABLE `user_token` (
 
 INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
 (8, 'aa@gmail.com', 'Wag8dsxx6ziM9O8n/HisVkGyy9+az5XeumzNuaJMGg4=', 1599579296),
-(9, 'christine@mail.com', '0Hrx2++F9JMO4pYOuQRLLlfQwP5DWH/O76x//+Yhs54=', 1651551632);
+(9, 'christine@mail.com', '0Hrx2++F9JMO4pYOuQRLLlfQwP5DWH/O76x//+Yhs54=', 1651551632),
+(10, 'mcdcnaguit@tip.edu.ph', 'R9ZzbqwC+J+x+5ZhLNW9xG5Xg1GSVkm9gEXX1otwJKA=', 1662203349),
+(11, 'mefcapudoy@tip.edu.ph', 'TxTWBAg6n/2fJcbyoWUoqcJ3ob3wI0I4o1mimphLUIg=', 1662203404);
 
 --
 -- Indexes for dumped tables
@@ -252,32 +258,39 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
 --
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
 -- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

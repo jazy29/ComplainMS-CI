@@ -15,41 +15,39 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"><?= $title; ?></h6>
+            <h6 class="m-0 font-weight-bold text-primary">Report Data</h6>
         </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover table-striped" id="dataTable" width="100%" cellspacing="0">
-                        <thead class="thead-dark">
+                    <thead class="thead-dark">
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Status</th>
+                                    <th>NIK</th>
+                                    <th>Report Title</th>
+                                    <th>Report Type</th>
+                                    <th>Date</th>
                                     <th>Action</th>
                                 </tr>
                         </thead>
                     <tbody>
                         <?php $index = 1; ?>
-                        <?php foreach($user_member as $um) : ?>
+                        <?php foreach($reports2 as $r) : ?>
+                        <?php if($user['id'] == $r['nik']) : ?> 
                             <tr>
-                                <td><?= $index; ?></td>
-                                <td><?= $um['name']; ?></td>
-                                <td><?= $um['email']; ?></td>
+                                <td><?= $index; ?></td> 
+                                <td><?= $r['name']; ?></td>
+                                <td><?= $r['nik']; ?></td>
+                                <td><?= $r['title']; ?></td>
+                                <td><?= $r['type']; ?></td>
+                                <td><?= date('d F Y' , $r['date_reported']); ?></td>
                                 <td>
-                                    <?php if ($um['is_active'] == 1) {
-                                        echo 'Active';
-                                    } else {
-                                        echo 'InActive';
-                                    } 
-                                    ?>
-                                </td>
-                                <td>
-                                    <a class="badge badge-primary" style="font-size:14px;" href="<?= site_url('admin/detailmember/'.$um['id']); ?>">Detail</a>
-                                    <a class="badge badge-success" style="font-size:14px;" href="<?= site_url('admin/editmember/'.$um['id']); ?>">Update</a>
-                                    <a class="badge badge-danger" style="font-size:14px;" href="#!" onclick="deleteConfirm('<?= site_url('admin/deletemember/'.$um['id']); ?>')">Delete</a>
+                                    <a class="badge badge-primary" style="font-size:14px;" href="<?= site_url('report/detail/'.$r['id']); ?>">Detail</a>
+                                    <a class="badge badge-danger" style="font-size:14px;" href="#!" onclick="deleteConfirm('<?= site_url('report/deletereport/'.$r['id']); ?>')">Delete</a>
                                 </td>
                             </tr>
+                        <?php endif; ?>
                         <?php $index++; ?>
                         <?php endforeach; ?>
                     </tbody>

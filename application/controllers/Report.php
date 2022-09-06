@@ -29,7 +29,11 @@ class Report extends CI_Controller {
     public function addreport()
     {
         $report = $this->Report_model;
-        
+
+        $this->form_validation->set_rules('status', 'Status', 'required', [
+            'required' => 'Status is required!'
+        ]);
+
         $this->form_validation->set_rules('uqid', 'UQID', 'required', [
             'required' => 'UQID is required!'
         ]);

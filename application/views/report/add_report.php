@@ -22,7 +22,9 @@
          </div>
             <div class="card-body">
             <div class="form-group">
-            <input type="hidden" id="status" name="status" value="2">
+
+            <input class="form-control" type="hidden" name="status" id="<?=$user['id']?>" value="pending" readonly>
+
             <h6>  <b>  <label for="uqid">User ID*</label> </b> </h6>
 
                        <input class="form-control" type="text" name="uqid" value="<?=$user['id']?>" readonly>

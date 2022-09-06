@@ -37,7 +37,7 @@
                         <?php if($user['id'] == $r['uqid']) : ?> 
                             <tr>
                                 <td><?= $index; ?></td> 
-                                <td><a class="badge badge-danger" style="font-size:14px;" href="#!" disabled>Pending</a></td> 
+                                <td><a class="badge badge-danger" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td> 
                                 <td><?= $r['name']; ?></td>
                                 <td><?= $r['title']; ?></td>
                                 <td><?= $r['type']; ?></td>

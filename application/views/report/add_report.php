@@ -23,7 +23,7 @@
             <div class="card-body">
             <div class="form-group">
 
-            <input class="form-control" type="hidden" name="status" id="<?=$user['id']?>" value="pending" readonly>
+            <input class="form-control" type="hidden" name="status" value="pending" readonly>
 
             <h6>  <b>  <label for="uqid">User ID*</label> </b> </h6>
 

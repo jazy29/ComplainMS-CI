@@ -23,8 +23,9 @@
                     <thead class="thead-dark">
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
-                                    <th>NIK</th>
+                                    <th>Status</th>
+                                    <th>Name</th>                            
+                                    <th>UqID</th>
                                     <th>Report Title</th>
                                     <th>Report Type</th>
                                     <th>Date</th>
@@ -36,8 +37,9 @@
                         <?php foreach($reports as $r) : ?>
                             <tr>
                                 <td><?= $index; ?></td>
+                                <td><a class="badge badge-danger" style="font-size:14px;" href="#!" disabled>Pending</a></td> 
                                 <td><?= $r['name']; ?></td>
-                                <td><?= $r['nik']; ?></td>
+                                <td><?= $r['uqid']; ?></td>
                                 <td><?= $r['title']; ?></td>
                                 <td><?= $r['type']; ?></td>
                                 <td><?= date('d F Y' , $r['date_reported']); ?></td>

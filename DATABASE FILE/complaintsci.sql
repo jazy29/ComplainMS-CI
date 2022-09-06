@@ -105,10 +105,11 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 CREATE TABLE `user_report` (
   `id` varchar(64) NOT NULL,
   `name` varchar(64) NOT NULL,
-  `nik` varchar(64) NOT NULL,
-  `rt` int(11) NOT NULL,
-  `rw` int(11) NOT NULL,
-  `village` varchar(64) NOT NULL,
+  `status` varchar(64) NOT NULL,
+  `uqid` varchar(64) NOT NULL,
+  `address` varchar(64) NOT NULL,
+  `age` int(11) NOT NULL,
+  `contactnum` int(11) NOT NULL,
   `title` varchar(128) NOT NULL,
   `description` text NOT NULL,
   `type` text NOT NULL,
@@ -120,15 +121,15 @@ CREATE TABLE `user_report` (
 -- Dumping data for table `user_report`
 --
 
-INSERT INTO `user_report` (`id`, `name`, `nik`, `rt`, `rw`, `village`, `title`, `description`, `type`, `date_reported`, `file`) VALUES
-('5f57a6d18c382', 'Marvin D. Behrens', '0311192857689401', 1, 4, 'Little Ivywood', 'Flood', 'Several residential areas were affected by the flood', 'Natural Disaster', 1646499899, '5f57a6d18c382.jpeg'),
-('5f57a769d43b0', 'Tiffany O. Errico', '3299000709012871', 2, 4, 'Aucteraden', 'Need Education Help', 'Some children are still not getting a decent education.', 'Education', 1648405450, '5f57a769d43b0.jpg'),
-('6270af1bdf852', 'Christine Moore', '12121', 2, 2, 'as', 'Demo', 'Demo demo demo', 'Corona Virus', 1651552027, '6270af1bdf852.png'),
-('631096ca4f2d2', 'Christian Dave Naguit', '15', 2, 1, 'baler', 'sda', 'asda', 'Health', 1662031562, 'default.jpg'),
-('63135a3eb2a04', 'Christian Dave Naguit', '1662212631775989', 21, 23, 'asdas', 'asdas', 'asdas', 'Sexual Harassment', 1662212670, '63135a3eb2a04.jpg'),
-('631376e11e712', 'Christian Dave Naguit', '1662219991509890', 23, 2112, 'asdas', 'asdasd', 'asdasd', 'Agriculture', 1662220001, 'default.jpg'),
-('631376ee381f5', 'Christian Dave Naguit', '1662220003876098', 23, 23, 'asd', '231', 'asdas', 'Natural Disasters', 1662220014, 'default.jpg'),
-('631380bf5f09f', 'Christian Dave Naguit', '43', 21, 21312, 'asdada', 'asdasd', 'asdada', 'Drugs', 1662222527, 'default.jpg');
+INSERT INTO `user_report` (`id`, `name`, `status`,`uqid`, `address` ,`age`, `contactnum`, `title`, `description`, `type`, `date_reported`, `file`) VALUES
+('5f57a6d18c382', 'Marvin D. Behrens','2' , '0311192857689401', 1, 4, 'Little Ivywood', 'Flood', 'Several residential areas were affected by the flood', 'Natural Disaster', 1646499899, '5f57a6d18c382.jpeg'),
+('5f57a769d43b0', 'Tiffany O. Errico','2' , '3299000709012871', 2, 4, 'Aucteraden', 'Need Education Help', 'Some children are still not getting a decent education.', 'Education', 1648405450, '5f57a769d43b0.jpg'),
+('6270af1bdf852', 'Christine Moore','2' , '12121', 2, 2, 'as', 'Demo', 'Demo demo demo', 'Corona Virus', 1651552027, '6270af1bdf852.png'),
+('631096ca4f2d2', 'Christian Dave Naguit','2' , '15', 2, 1, 'baler', 'sda', 'asda', 'Health', 1662031562, 'default.jpg'),
+('63135a3eb2a04', 'Christian Dave Naguit','2' , '1662212631775989', 21, 23, 'asdas', 'asdas', 'asdas', 'Sexual Harassment', 1662212670, '63135a3eb2a04.jpg'),
+('631376e11e712', 'Christian Dave Naguit','2' , '1662219991509890', 23, 2112, 'asdas', 'asdasd', 'asdasd', 'Agriculture', 1662220001, 'default.jpg'),
+('631376ee381f5', 'Christian Dave Naguit','2' , '1662220003876098', 23, 23, 'asd', '231', 'asdas', 'Natural Disasters', 1662220014, 'default.jpg'),
+('631380bf5f09f', 'Christian Dave Naguit','2' , '43', 21, 21312, 'asdada', 'asdasd', 'asdada', 'Drugs', 1662222527, 'default.jpg');
 
 -- --------------------------------------------------------
 

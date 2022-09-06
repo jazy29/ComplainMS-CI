@@ -15,7 +15,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Report Data</h6>
+            <h6 class="m-0 font-weight-bold text-primary">History Report</h6>
         </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -23,8 +23,8 @@
                     <thead class="thead-dark">
                                 <tr>
                                     <th>#</th>
+                                    <th>Status</th>
                                     <th>Name</th>
-                                    <th>NIK</th>
                                     <th>Report Title</th>
                                     <th>Report Type</th>
                                     <th>Date</th>
@@ -34,11 +34,11 @@
                     <tbody>
                         <?php $index = 1; ?>
                         <?php foreach($reports2 as $r) : ?>
-                        <?php if($user['id'] == $r['nik']) : ?> 
+                        <?php if($user['id'] == $r['uqid']) : ?> 
                             <tr>
                                 <td><?= $index; ?></td> 
+                                <td><a class="badge badge-danger" style="font-size:14px;" href="#!" disabled>Pending</a></td> 
                                 <td><?= $r['name']; ?></td>
-                                <td><?= $r['nik']; ?></td>
                                 <td><?= $r['title']; ?></td>
                                 <td><?= $r['type']; ?></td>
                                 <td><?= date('d F Y' , $r['date_reported']); ?></td>

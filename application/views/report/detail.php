@@ -9,31 +9,31 @@
             <h6 class="m-0 font-weight-bold text-primary"><a href="<?= base_url('report') ?>"><i class="fas fa-arrow-left"></i> Back</a></h6>
         </div>
         <div class="card-body">
+        <div class="form-group">
+                <label for="uqid">UQID</label>
+                <input class="form-control" type="text" name="uqid" value="<?= $report['uqid']; ?>" readonly>
+            </div>
             <div class="form-group">
                 <label for="name">Reporter's Name</label>
                 <input class="form-control" type="text" name="name" value="<?= $report['name']; ?>" readonly>
             </div>
             <div class="form-group">
-                <label for="nik">ID</label>
-                <input class="form-control" type="text" name="nik" value="<?= $report['nik']; ?>" readonly>
+                <label for="address">Address</label>
+                <input class="form-control" type="text" name="address" value="<?= $report['address']; ?>" readonly>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="rt">RT</label>
-                        <input class="form-control" type="text" name="rt" value="<?= $report['rt']; ?>" readonly>
+                        <label for="age">Age</label>
+                        <input class="form-control" type="text" name="age" value="<?= $report['age']; ?>" readonly>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="rw">RW</label>
-                        <input class="form-control" type="text" name="rw" value="<?= $report['rw']; ?>" readonly>
+                        <label for="contactnum">Contact Number</label>
+                        <input class="form-control" type="text" name="contactnum" value="<?= $report['contactnum']; ?>" readonly>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="village">Village</label>
-                <input class="form-control" type="text" name="village" value="<?= $report['village']; ?>" readonly>
             </div>
             <div class="form-group">
                 <label for="title">Report Title</label>

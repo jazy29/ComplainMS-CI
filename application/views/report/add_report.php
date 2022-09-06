@@ -22,9 +22,10 @@
          </div>
             <div class="card-body">
             <div class="form-group">
-            <h6>  <b>  <label for="nik">User ID*</label> </b> </h6>
+            <input type="hidden" id="status" name="status" value="2">
+            <h6>  <b>  <label for="uqid">User ID*</label> </b> </h6>
 
-                       <input class="form-control" type="text" name="nik" value="<?=$user['id']?>" readonly>
+                       <input class="form-control" type="text" name="uqid" value="<?=$user['id']?>" readonly>
                          
                 </div>
             <div class="form-group">
@@ -35,29 +36,29 @@
                 <div class="col-md-4">
                     
                         <div class="form-group">
-                <h6>  <b>   <label for="village">House Address*</label>  </b> </h6>
+                <h6>  <b>   <label for="address">House Address*</label>  </b> </h6>
                             <input class="form-control"
-                             type="text" name="village" placeholder="House Address" value="<?= set_value('village'); ?>">
-                             <?= form_error('village', '<small class="text-danger pl-3">', '</small>'); ?>
+                             type="text" name="address" placeholder="House Address" value="<?= set_value('address'); ?>">
+                             <?= form_error('address', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
-                 <h6>  <b>  <label for="rt">Age*</label>  </b> </h6>
+                 <h6>  <b>  <label for="age">Age*</label>  </b> </h6>
                             <input class="form-control"
-                            type="number" name="rt" placeholder="Age" value="<?= set_value('rt'); ?>">
-                            <?= form_error('rt', '<small class="text-danger pl-3">', '</small>'); ?>
+                            type="number" name="age" placeholder="Age" value="<?= set_value('age'); ?>">
+                            <?= form_error('age', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                     </div>
                 
                     
                 </div>
                 <div class="form-group">
-                <h6>  <b>   <label for="rw">Contact Number*</label> </b> </h6>
+                <h6>  <b>   <label for="contactnum">Contact Number*</label> </b> </h6>
                     <input class="form-control"
-                            type="text" name="rw" placeholder="Contact Number" value="<?= set_value('rw'); ?>">
-                            <?= form_error('rw', '<small class="text-danger pl-3">', '</small>'); ?>
+                            type="text" name="contactnum" placeholder="Contact Number" value="<?= set_value('contactnum'); ?>">
+                            <?= form_error('contactnum', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>     
             </div>
         </div>

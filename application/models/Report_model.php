@@ -13,9 +13,9 @@ class Report_model extends CI_Model {
         return $this->db->get_where('user_report', ['id' => $id])->row_array();
     }
 
-    public function getByNIK($nik)
+    public function getByUqid($uqid)
     {
-        return $this->db->get_where('user_report', ['nik' => $nik])->row_array();
+        return $this->db->get_where('user_report', ['uqid' => $uqid])->row_array();
     }
 
     public function save()
@@ -23,10 +23,10 @@ class Report_model extends CI_Model {
         $post = $this->input->post();
         $this->id               = uniqid();
         $this->name             = $post['name'];
-        $this->nik              = $post['nik'];
-        $this->rt               = $post['rt'];
-        $this->rw               = $post['rw'];
-        $this->village          = $post['village'];
+        $this->uqid             = $post['uqid'];
+        $this->address          = $post['address'];
+        $this->age              = $post['age'];
+        $this->contactnum       = $post['contactnum'];
         $this->title            = $post['title'];
         $this->description      = $post['description'];
         $this->type             = $post['type'];

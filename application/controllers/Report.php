@@ -30,17 +30,17 @@ class Report extends CI_Controller {
     {
         $report = $this->Report_model;
         
-        $this->form_validation->set_rules('nik', 'NIK', 'required', [
-            'required' => 'ID is required!'
+        $this->form_validation->set_rules('uqid', 'UQID', 'required', [
+            'required' => 'UQID is required!'
         ]);
-        $this->form_validation->set_rules('rt', 'RT', 'required|numeric', [
-            'required' => 'RT is required!'
+        $this->form_validation->set_rules('address', 'Address', 'required', [
+            'required' => 'Address is required!'
         ]);
-        $this->form_validation->set_rules('rw', 'RW', 'required|numeric', [
-            'required' => 'RW is required!'
+        $this->form_validation->set_rules('age', 'AGE', 'required|numeric', [
+            'required' => 'AGE is required!'
         ]);
-        $this->form_validation->set_rules('village', 'Village', 'required', [
-            'required' => 'Village is required!'
+        $this->form_validation->set_rules('contactnum', 'Contactnum', 'required|numeric', [
+            'required' => 'Contactnum is required!'
         ]);
         $this->form_validation->set_rules('title', 'Report Title', 'required', [
             'required' => 'Report title is required!'
@@ -86,7 +86,7 @@ class Report extends CI_Controller {
 
         public function user_report_detail()
         {
-            $data['title'] = 'Report Data';
+            $data['title'] = 'History';
             $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
             $data['userid'] = $this->db->get_where('user', ['id' => $this->session->userdata('email')])->row_array();
             $data['reports2'] = $this->db->order_by('date_reported', 'DESC');

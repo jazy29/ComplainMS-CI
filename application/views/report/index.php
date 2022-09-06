@@ -36,8 +36,8 @@
                         <?php foreach($reports as $r) : ?>
                             <tr>
                                 <td><?= $index; ?></td>
+                                <td><a class="badge badge-danger" style="font-size:14px;" href="#!" disabled>Pending</a></td> 
                                 <td><?= $r['name']; ?></td>
-                                <td><?= $r['nik']; ?></td>
                                 <td><?= $r['title']; ?></td>
                                 <td><?= $r['type']; ?></td>
                                 <td><?= date('d F Y' , $r['date_reported']); ?></td>

@@ -25,8 +25,8 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="report">Status of Report</label>
-                        <select class="form-control" name="status">
-                            <option selected disabled value=""><?= $ureport['status']; ?></option>
+                        <select class="form-control" name="status"> 
+                            <option selected disabled class="form-control text-center" value="<?= $ureport['status']; ?>">-- <?= $ureport['status']; ?> --</option>
                             <option class="text-warning text-center" value="Pending">Pending</option>
                             <option class="text-primary text-center" value="Process">Process</option>
                             <option class="text-success text-center" value="Done">Done</option>
@@ -70,7 +70,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="date_reported">Reported On</label>
-                        <input class="form-control" type="text" name="date_reported" value="<?= $ureport['date_reported']; ?>" readonly>
+                        <input class="form-control" type="text" name="date_reported" value="<?= date('d F Y' , $ureport['date_reported']); ?>" readonly>
                     </div>
                 </div>
             </div>

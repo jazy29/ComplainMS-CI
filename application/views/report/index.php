@@ -38,7 +38,7 @@
                             <tr>
                                 <td><?= $index; ?></td>
                                 <?php if($r['status'] == "Pending") : ?> 
-                                    <td><a class="badge badge-warning" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td>                                 
+                                    <td><a class="badge badge-warning badge-center" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td>                                 
                                 <?php endif; ?>
                                 <?php if($r['status'] == "Process") : ?> 
                                     <td><a class="badge badge-primary" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td>                                 

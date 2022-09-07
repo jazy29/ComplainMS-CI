@@ -37,7 +37,15 @@
                         <?php if($user['id'] == $r['uqid']) : ?> 
                             <tr>
                                 <td><?= $index; ?></td> 
-                                <td><a class="badge badge-danger" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td> 
+                                <?php if($r['status'] == "Pending") : ?> 
+                                    <td><a class="badge badge-warning" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td>                                 
+                                <?php endif; ?>
+                                <?php if($r['status'] == "Process") : ?> 
+                                    <td><a class="badge badge-primary" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td>                                 
+                                <?php endif; ?>
+                                <?php if($r['status'] == "Done") : ?> 
+                                    <td><a class="badge badge-success" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td> 
+                                <?php endif; ?>                                
                                 <td><?= $r['name']; ?></td>
                                 <td><?= $r['title']; ?></td>
                                 <td><?= $r['type']; ?></td>

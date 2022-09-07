@@ -111,8 +111,7 @@ class Report extends CI_Controller {
                     'contactnum' => $this->input->post('contactnum'),
                     'title' => $this->input->post('title'),
                     'description' => $this->input->post('description'),
-                    'type' => $this->input->post('type'),
-                    'date_reported' => $this->input->post('date_reported'),              
+                    'type' => $this->input->post('type'),           
                 ];
                     
                 $this->db->update('user_report', $data, ['id' => $data['id']]);
@@ -138,6 +137,18 @@ class Report extends CI_Controller {
             $this->load->view('report/user_report_detail', $data);
             $this->load->view('templates/admin_footer');
         }
+
+
+    // delete report
+    public function deleteownreport($id = null)
+    {
+        if (!isset($id)) show_404();
+
+        $report = $this->Report_model;
+        if ($report->delete($id)) {
+            redirect('report/user_report_detail');
+        }
+    }
 
     // delete report
     public function deletereport($id = null)

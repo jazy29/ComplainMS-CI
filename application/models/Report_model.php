@@ -22,6 +22,7 @@ class Report_model extends CI_Model {
     {
         $post = $this->input->post();
         $this->id               = uniqid();
+        $this->status           = $post['status'];
         $this->name             = $post['name'];
         $this->uqid             = $post['uqid'];
         $this->address          = $post['address'];

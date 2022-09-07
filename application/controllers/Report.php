@@ -15,7 +15,7 @@ class Report extends CI_Controller {
     {
         $data['title'] = 'Report Data';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['reports'] = $this->db->order_by('date_reported', 'DESC');
+        $data['reports'] = $this->db->order_by('date_reported');
         $data['reports'] = $this->Report_model->getAll();
             
         $this->load->view('templates/admin_header', $data);
@@ -29,7 +29,11 @@ class Report extends CI_Controller {
     public function addreport()
     {
         $report = $this->Report_model;
-        
+
+        $this->form_validation->set_rules('status', 'Status', 'required', [
+            'required' => 'Status is required!'
+        ]);
+
         $this->form_validation->set_rules('uqid', 'UQID', 'required', [
             'required' => 'UQID is required!'
         ]);
@@ -82,6 +86,42 @@ class Report extends CI_Controller {
         $this->load->view('templates/admin_footer');
     }
 
+        // edit member
+        public function update_detail($id)
+        {
+            $this->form_validation->set_rules('name', 'Name', 'required');
+            
+            if ($this->form_validation->run() == false) {
+                $data['title'] = 'Report Update';
+                $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+                $data['ureport'] = $this->db->get_where('user_report', ['id' => $id])->row_array();
+                $this->load->view('templates/admin_header', $data);
+                $this->load->view('templates/admin_sidebar');
+                $this->load->view('templates/admin_topbar', $data);
+                $this->load->view('report/update_detail', $data);
+                $this->load->view('templates/admin_footer');
+            } else {
+                $data = [
+                    'id' => $this->input->post('id'),
+                    'status' => $this->input->post('status'),
+                    'name' => $this->input->post('name'),
+                    'uqid' => $this->input->post('uqid'),
+                    'address' => $this->input->post('address'),
+                    'age' => $this->input->post('age'),
+                    'contactnum' => $this->input->post('contactnum'),
+                    'title' => $this->input->post('title'),
+                    'description' => $this->input->post('description'),
+                    'type' => $this->input->post('type'),
+                    'date_reported' => $this->input->post('date_reported'),              
+                ];
+                    
+                $this->db->update('user_report', $data, ['id' => $data['id']]);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Report updated successfully!</div>');
+                redirect('report');
+            }
+        }
+    
     // view detail report history
 
         public function user_report_detail()

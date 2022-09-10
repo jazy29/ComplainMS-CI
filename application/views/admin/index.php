@@ -1,8 +1,8 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+    <!-- Page Heading --> 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
     <div class="row">
         <div class="col-xl-3 col-md-6 mb-4">
@@ -89,6 +89,46 @@
 
 </div>
 <!-- /.container-fluid -->
+
+<?php foreach($analytics as $i)
+    $typeIn[]=$i['type'];  
+ 
+?>
+<?php foreach($analytics as $i)
+    $typecount[]=$i['tcount']; 
+?>
+
+
+<div style="width:500px;">
+  <canvas id="myChart"></canvas>
+  
+</div>
+
+<script>
+  const labels = <?php echo json_encode($typeIn)?>;
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: <?php echo json_encode($typecount)?>,
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {}
+  };
+</script>
+<script>
+
+const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
 
 </div>
 <!-- End of Main Content -->

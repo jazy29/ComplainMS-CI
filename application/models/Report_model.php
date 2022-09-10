@@ -70,4 +70,15 @@ class Report_model extends CI_Model {
         }
     }
 
+    public function getTypeCount()
+    {
+        $query = "SELECT type, count(type) as tcount 
+        FROM user_report 
+        GROUP by type;";
+
+        return $this->db->query($query)->result_array();
+
+
+    }
+
 }

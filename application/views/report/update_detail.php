@@ -27,8 +27,8 @@
                         <label for="report">Status of Report</label>
                         <select class="form-control" name="status"> 
                             <option class="text-warning text-center" value="Pending" <?php if( $ureport['status'] == "Pending") echo 'selected = "selected"';?>>Pending</option>
-                            <option class="text-primary text-center" value="Pending" <?php if( $ureport['status'] == "Process") echo 'selected = "selected"';?>>Process</option>
-                            <option class="text-success text-center" value="Pending" <?php if( $ureport['status'] == "Done") echo 'selected = "selected"';?>>Done</option>
+                            <option class="text-primary text-center" value="Process" <?php if( $ureport['status'] == "Process") echo 'selected = "selected"';?>>Process</option>
+                            <option class="text-success text-center" value="Done" <?php if( $ureport['status'] == "Done") echo 'selected = "selected"';?>>Done</option>
                         </select>
                     </div>
                 </div>

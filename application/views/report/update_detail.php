@@ -26,10 +26,9 @@
                     <div class="form-group">
                         <label for="report">Status of Report</label>
                         <select class="form-control" name="status"> 
-                            <option selected disabled class="form-control text-center" value="<?= $ureport['status']; ?>">-- <?= $ureport['status']; ?> --</option>
-                            <option class="text-warning text-center" value="Pending">Pending</option>
-                            <option class="text-primary text-center" value="Process">Process</option>
-                            <option class="text-success text-center" value="Done">Done</option>
+                            <option class="text-warning text-center" value="Pending" <?php if( $ureport['status'] == "Pending") echo 'selected = "selected"';?>>Pending</option>
+                            <option class="text-primary text-center" value="Pending" <?php if( $ureport['status'] == "Process") echo 'selected = "selected"';?>>Process</option>
+                            <option class="text-success text-center" value="Pending" <?php if( $ureport['status'] == "Done") echo 'selected = "selected"';?>>Done</option>
                         </select>
                     </div>
                 </div>
@@ -78,7 +77,18 @@
                 <a target="_blank" class="badge badge-primary" style="font-size:16px;" href="<?= base_url('assets/img/report/').$ureport['file']; ?>"><i class="fas fa-image"></i> Check Attachment</a>
             </div>
             <!-- btn -->
-            <input class="btn btn-success" type="submit" name="btn" value="Change" />
+            <div class="row">            
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="btn" value="Change" />
+                    </div>
+                </div>                                    
+                <div class="col-md-6">
+                    <div class="form-group">            
+                        <input class="btn btn-danger" type="button" name="cancel" value="Cancel" onClick="window.location='http://localhost/ComplaintMS-CI/report';" />
+                    </div>
+                </div>
+            </div>                    
             </form> 
         </div>
     </div>

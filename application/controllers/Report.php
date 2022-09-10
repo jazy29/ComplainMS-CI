@@ -90,6 +90,9 @@ class Report extends CI_Controller {
         public function update_detail($id)
         {
             $this->form_validation->set_rules('name', 'Name', 'required');
+            $this->form_validation->set_rules('status', 'Status Report', 'required', [
+                'required' => 'Status is required!'
+            ]);
             
             if ($this->form_validation->run() == false) {
                 $data['title'] = 'Report Update';
@@ -100,6 +103,8 @@ class Report extends CI_Controller {
                 $this->load->view('templates/admin_topbar', $data);
                 $this->load->view('report/update_detail', $data);
                 $this->load->view('templates/admin_footer');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                Failed to Update status report!</div>');
             } else {
                 $data = [
                     'id' => $this->input->post('id'),

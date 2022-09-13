@@ -22,6 +22,8 @@ class Admin extends CI_Controller {
             'sub_menu' => $this->db->get('user_sub_menu')->num_rows(),
             'report' => $this->db->get('user_report')->num_rows(),
         ];
+        $this->load->model('Report_model', 'report');
+        $data['analytics'] = $this->report->getTypeCount();
         
         $this->load->view('templates/admin_header', $data);
         $this->load->view('templates/admin_sidebar');

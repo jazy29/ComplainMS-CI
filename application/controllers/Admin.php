@@ -215,4 +215,17 @@ class Admin extends CI_Controller {
         }
     }
 
+    public function analytics()
+    {
+        $data['title'] = 'analytics';
+        
+        
+        $this->load->view('templates/admin_header', $data);
+        $this->load->view('templates/admin_sidebar');
+        $this->load->view('admin/analytics', $data);
+
+        
+
+    }
+
 }

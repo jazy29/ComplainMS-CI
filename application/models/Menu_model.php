@@ -12,4 +12,11 @@ class Menu_model extends CI_Model {
         return $this->db->query($query)->result_array();
     }
 
+    public function getAnalytics()
+    {
+        $query =    "SELECT `type`, count(`type`) as `tcount` FROM `user_report` GROUP by `type`";
+
+        return $this->db->query($query)->result_array();
+    }
+    
 }

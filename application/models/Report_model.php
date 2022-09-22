@@ -21,6 +21,8 @@ class Report_model extends CI_Model {
     public function save()
     {
         $post = $this->input->post();
+        $this->load->helper('date');
+
         $this->id               = uniqid();
         $this->status           = $post['status'];
         $this->name             = $post['name'];
@@ -31,7 +33,7 @@ class Report_model extends CI_Model {
         $this->title            = $post['title'];
         $this->description      = $post['description'];
         $this->type             = $post['type'];
-        $this->date_reported    = time();
+        $this->date_reported    = NOW();
         $this->file             = $this->_uploadFile();
 
         return $this->db->insert('user_report', $this);
@@ -77,8 +79,15 @@ class Report_model extends CI_Model {
         GROUP by type;";
 
         return $this->db->query($query)->result_array();
+    }
 
+    public function getDateReport()
+    {
+        $query = "SELECT MONTH(date_reported) as month 
+        FROM user_report 
+        GROUP by month(date_reported);";
 
+        return $this->db->query($query)->result_array();
     }
 
 }

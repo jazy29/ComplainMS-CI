@@ -50,7 +50,7 @@
                                 <td><?= $r['uqid']; ?></td>
                                 <td><?= $r['title']; ?></td>
                                 <td><?= $r['type']; ?></td>
-                                <td><?= date('d F Y' , $r['date_reported']); ?></td>
+                                <td><?= $r['date_reported']; ?></td>
                                 <td>
                                     <a class="badge badge-primary" style="font-size:14px;" href="<?= site_url('report/update_detail/'.$r['id']); ?>">Detail</a>
                                     <a class="badge badge-danger" style="font-size:14px;" href="#!" onclick="deleteConfirm('<?= site_url('report/deletereport/'.$r['id']); ?>')">Delete</a>

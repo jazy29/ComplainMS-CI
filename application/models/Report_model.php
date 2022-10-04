@@ -22,7 +22,9 @@ class Report_model extends CI_Model {
     {
         $post = $this->input->post();
         $this->load->helper('date');
-
+        $orgDate = "17-07-2012"; 
+        $date = str_replace('-"', '/', $orgDate); 
+        $newDate = date("Y/m/d", strtotime($date));
         $this->id               = uniqid();
         $this->status           = $post['status'];
         $this->name             = $post['name'];
@@ -83,8 +85,8 @@ class Report_model extends CI_Model {
 
     public function getDateReport()
     {
-        $query = "SELECT MONTH(date_reported) as month 
-        FROM user_report 
+        $query = "SELECT month(date_reported) as month, count(date_reported) as dcount, CONVERT(date_reported,[CharDate]) as 'Date-CONVERT'
+        FROM user_report
         GROUP by month(date_reported);";
 
         return $this->db->query($query)->result_array();

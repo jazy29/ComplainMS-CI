@@ -5,7 +5,7 @@
   <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
     <div class="row">
-        <div class="col-xl-5 col-md-8 mb-4" style="margin-left:70px;">
+        <div class="col-xl-8 col-md-8 mb-4" style="margin-left:70px;">
             <div class="card border-left-dark shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -27,7 +27,7 @@
                 <small><a class="ml-3" href="<?= base_url('admin/role'); ?>">View &rarr;</a></small>
             </div>
         </div>
-        <div class="col-xl-5 col-md-8 mb-4" style="margin-left:70px;">
+        <div class="col-xl-8 col-md-8 mb-4" style="margin-left:70px;">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -35,7 +35,7 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Month Most Receive Reports</div>
                             <!-- /.container-fluid -->
                             <?php foreach($analyticsdatereport as $j)
-                              $dateIn[]=date('F' , $j['date_reported']);
+                              $dateIn[]=date('F', $j['date_reported']);
                             ?>
                             <?php foreach($analyticsdatereport as $j)
                                 $datecount[]=$j['dcount']; 

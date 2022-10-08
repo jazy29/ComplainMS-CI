@@ -1,6 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-<form action="<?php echo site_url('report/addreport') ?>" method="post" enctype="multipart/form-data" >
+<form action="<?php echo site_url('report/addreport') ?>" name="form1" id="form1" method="post" enctype="multipart/form-data" >
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
     <div class="card shadow mb-3">
@@ -24,6 +24,7 @@
             <div class="form-group">
     
             <input class="form-control" type="hidden" name="status" value="Pending" readonly>
+            
 
             <h6>  <b>  <label for="uqid">User ID*</label> </b> </h6>
 
@@ -99,7 +100,7 @@
                     </div>
                 </div>
                 <!-- button save -->
-                <input class="btn btn-success" type="submit"  name="btn" value="Report!" />
+                <input class="btn btn-success" href="#deleteModal" type="button" data-toggle="modal" data-target="#confirm-submit" value="Report" onclick="return deleteConfirm(this.form)"/>
             </form>
         </div>
 
@@ -119,3 +120,34 @@
 
 </div>
 <!-- End of Main Content -->
+
+<!-- modal delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Submiting this form can't be deleted</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <input id="delete-confirm" class="btn btn-success" type="submit" value="Confirm"/>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+    function deleteConfirm(frm){
+        $('#deleteModal').modal();
+        $('#delete-confirm').click(function() {
+        // handle form processing here
+        $('#form1').submit();
+    });
+        
+    }
+    
+</script>

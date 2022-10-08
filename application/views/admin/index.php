@@ -82,53 +82,9 @@
                         </div>
                     </div>
                 </div>
-                <small><a class="ml-3" href="<?= base_url('report'); ?>">View &rarr;</a></small>
+                <small><a class="ml-3" href="<?= base_url('admin/analytics'); ?>">View &rarr;</a></small>
             </div>
         </div>
     </div>
 
 </div>
-<!-- /.container-fluid -->
-
-<?php foreach($analytics as $i)
-    $typeIn[]=$i['type'];  
- 
-?>
-<?php foreach($analytics as $i)
-    $typecount[]=$i['tcount']; 
-?>
-
-
-<div style="width:500px;">
-  <canvas id="myChart"></canvas>
-  
-</div>
-
-<script>
-  const labels = <?php echo json_encode($typeIn)?>;
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: <?php echo json_encode($typecount)?>,
-    }]
-  };
-
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {}
-  };
-</script>
-<script>
-
-const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-</script>
-
-</div>
-<!-- End of Main Content -->

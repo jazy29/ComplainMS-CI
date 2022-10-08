@@ -91,7 +91,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <?php if($report['status'] != "Cancelled") : ?> 
+                        <?php if($report['status'] != "Cancelled" && $report['status'] != "Done") : ?> 
                             <input class="btn btn-danger" href="#deleteModal" type="button" data-toggle="modal" data-target="#confirm-submit"  name="btn" value="Cancel" onclick="return deleteConfirm(this.form)"/>
                         <?php endif; ?>
                     </div>

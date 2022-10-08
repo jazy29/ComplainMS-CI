@@ -141,7 +141,7 @@
 </div>
 <script>
 
-    function deleteConfirm(frm){
+    function deleteConfirm(){
         $('#deleteModal').modal();
         $('#delete-confirm').click(function() {
         // handle form processing here

@@ -37,6 +37,9 @@
                         <?php foreach($reports as $r) : ?>
                             <tr>
                                 <td><?= $index; ?></td>
+                                <?php if($r['status'] == "Cancelled") : ?> 
+                                    <td><a class="badge badge-secondary badge-center" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td>                                 
+                                <?php endif; ?>
                                 <?php if($r['status'] == "Pending") : ?> 
                                     <td><a class="badge badge-warning badge-center" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td>                                 
                                 <?php endif; ?>

@@ -1,9 +1,14 @@
+<!--
 <script>
-    function deleteConfirm(url){
-        $('#btn-delete').attr('href', url);
+    function deleteConfirm(){
         $('#deleteModal').modal();
+        $('#btn-delete').click(function() {
+        // handle form processing here
+        document.status.value = 'Cancelled';
+    });
     }
 </script>
+-->
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -37,6 +42,9 @@
                         <?php if($user['id'] == $r['uqid']) : ?> 
                             <tr>
                                 <td><?= $index; ?></td> 
+                                <?php if($r['status'] == "Cancelled") : ?> 
+                                    <td><a class="badge badge-secondary" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td>                                 
+                                <?php endif; ?>
                                 <?php if($r['status'] == "Pending") : ?> 
                                     <td><a class="badge badge-warning" style="font-size:14px;" href="#!" disabled><?= $r['status']; ?></a></td>                                 
                                 <?php endif; ?>
@@ -52,7 +60,9 @@
                                 <td><?= date('d F Y' , $r['date_reported']); ?></td>
                                 <td>
                                     <a class="badge badge-primary" style="font-size:14px;" href="<?= site_url('report/detail/'.$r['id']); ?>">Detail</a>
+                                    <!--
                                     <a class="badge badge-danger" style="font-size:14px;" href="#!" onclick="deleteConfirm('<?= site_url('report/deleteownreport/'.$r['id']); ?>')">Delete</a>
+                                    -->
                                 </td>
                             </tr>
                         <?php endif; ?>
@@ -70,6 +80,7 @@
 <!-- End of Main Content -->
 
 <!-- modal delete -->
+<!--
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -87,3 +98,4 @@
     </div>
   </div>
 </div>
+-->

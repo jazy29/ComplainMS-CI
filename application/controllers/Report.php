@@ -75,15 +75,40 @@ class Report extends CI_Controller {
     // view detail report
     public function detail($id)
     {
-        $data['title'] = 'Report Detail Information';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['report'] = $this->Report_model->getById($id);
             
-        $this->load->view('templates/admin_header', $data);
-        $this->load->view('templates/admin_sidebar');
-        $this->load->view('templates/admin_topbar', $data);
-        $this->load->view('report/detail', $data);
-        $this->load->view('templates/admin_footer');
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('status', 'Status Report', 'required', [
+            'required' => 'Status is required!'
+        ]);
+        
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Report Detail Information';
+            $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+            $data['report'] = $this->db->get_where('user_report', ['id' => $id])->row_array();
+            $this->load->view('templates/admin_header', $data);
+            $this->load->view('templates/admin_sidebar');
+            $this->load->view('templates/admin_topbar', $data);
+            $this->load->view('report/detail', $data);
+            $this->load->view('templates/admin_footer');
+        } else {
+            $data = [
+                'id' => $this->input->post('id'),
+                'status' => $this->input->post('status'),
+                'name' => $this->input->post('name'),
+                'uqid' => $this->input->post('uqid'),
+                'address' => $this->input->post('address'),
+                'age' => $this->input->post('age'),
+                'contactnum' => $this->input->post('contactnum'),
+                'title' => $this->input->post('title'),
+                'description' => $this->input->post('description'),
+                'type' => $this->input->post('type'),           
+            ];
+                
+            $this->db->update('user_report', $data, ['id' => $data['id']]);
+
+            redirect('report/user_report_detail');
+        }
+        
     }
 
         // edit member
@@ -143,17 +168,20 @@ class Report extends CI_Controller {
             $this->load->view('templates/admin_footer');
         }
 
-
-    // delete report
-    public function deleteownreport($id = null)
+/*
+    // cancel own report
+    public function cancelownreport($id = null)
     {
-        if (!isset($id)) show_404();
-
-        $report = $this->Report_model;
-        if ($report->delete($id)) {
-            redirect('report/user_report_detail');
-        }
+        $data = [
+            'status' => $this->input->post('status'),         
+        ];
+            
+        $this->db->update('user_report', $data, ['id' => $data['id']]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Report updated successfully!</div>');
+        redirect('report/user_report_detail');
     }
+*/
 
     // delete report
     public function deletereport($id = null)

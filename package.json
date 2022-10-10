@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "jquery": "^3.6.1",
-    "phpmyadmin": "^0.0.1-security"
+    "jquery": "^3.6.1"
   }
 }

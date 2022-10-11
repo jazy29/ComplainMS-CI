@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'bims-brgy386-complaintms.scm.azurewebsites.net:443',
+	'hostname' => 'localhost',
 	'username' => '$BIMS-Brgy386-ComplaintMS',
 	'password' => 'jpqjvRl6ovLWDCfciBqtcukRxsTEzTvb1dM8svcET16btS8DRSnRaCooxkLz',
 	'database' => 'https://bims-brgy386-complaintms.azurewebsites.net',

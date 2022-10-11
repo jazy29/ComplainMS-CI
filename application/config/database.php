@@ -74,11 +74,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '3306',
-	'hostname' => 'ftps://waws-prod-dm1-317.ftp.azurewebsites.windows.net/site/wwwroot',
-	'username' => 'BIMS-Brgy386-ComplaintMS\$BIMS-Brgy386-ComplaintMS',
-	'password' => 'jpqjvRl6ovLWDCfciBqtcukRxsTEzTvb1dM8svcET16btS8DRSnRaCooxkLz',
-	'database' => 'https://bims-brgy386-complaintms.azurewebsites.net',
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'complaintsci',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

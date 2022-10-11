@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '127.0.0.1',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => 'localhostt',
+	'username' => 'BIMS-Brgy386-ComplaintMS\$BIMS-Brgy386-ComplaintMS',
+	'password' => 'jpqjvRl6ovLWDCfciBqtcukRxsTEzTvb1dM8svcET16btS8DRSnRaCooxkLz',
 	'database' => 'complaintsci',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

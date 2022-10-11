@@ -74,7 +74,7 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
+	'dsn'	=> '3306',
 	'hostname' => 'localhost',
 	'username' => '$BIMS-Brgy386-ComplaintMS',
 	'password' => 'jpqjvRl6ovLWDCfciBqtcukRxsTEzTvb1dM8svcET16btS8DRSnRaCooxkLz',

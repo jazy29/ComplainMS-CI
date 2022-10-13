@@ -35,7 +35,11 @@ class Report_model extends CI_Model {
         $this->title            = $post['title'];
         $this->description      = $post['description'];
         $this->type             = $post['type'];
+<<<<<<< HEAD
+        $this->date_reported    = now();
+=======
         $this->date_reported    = mysql_to_unix('date');
+>>>>>>> 4cf1a52c570d27adc5f6150ab50a05dff215ab17
         $this->file             = $this->_uploadFile();
 
         return $this->db->insert('user_report', $this);

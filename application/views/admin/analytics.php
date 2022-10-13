@@ -1,4 +1,5 @@
 <!-- Begin Page Content -->
+<<<<<<< HEAD
 
 <div class="container-fluid">
     <!-- Page Heading --> 
@@ -73,6 +74,13 @@
 
     
 
+=======
+<div class="container-fluid">
+    <!-- Page Heading --> 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+
+>>>>>>> 4cf1a52c570d27adc5f6150ab50a05dff215ab17
     <div class="row">
         <div class="col-xl-8 col-md-8 mb-4" style="margin-left:70px;">
             <div class="card border-left-dark shadow h-100 py-2">
@@ -82,7 +90,11 @@
                         <div class="col-auto">
                             <!-- /.container-fluid -->
                           <?php foreach($analytics as $i)
+<<<<<<< HEAD
                              $typeIn[]=$i['type'];  
+=======
+                              $typeIn[]=$i['type'];  
+>>>>>>> 4cf1a52c570d27adc5f6150ab50a05dff215ab17
                           ?>
                           <?php foreach($analytics as $i)
                               $typecount[]=$i['tcount']; 

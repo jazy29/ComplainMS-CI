@@ -142,7 +142,7 @@ class Auth extends CI_Controller {
             Your account has been created successfully. Please check your email to activate your account!</div>');
             redirect('auth','refresh');
         }else{
-        
+            redirect('auth/registration','refresh');
           
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> "You are not registered resident. Please contact barangay officials!"
             </div>');

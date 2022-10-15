@@ -161,8 +161,8 @@ class Auth extends CI_Controller {
         $config = array();
         $config['protocol']  = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.gmail.com';
-        $config['smtp_user'] = 'xxxgerenaxxx@gmail.com';
-        $config['smtp_pass'] = 'xhybsiuvzrbbyzkr';
+        $config['smtp_user'] = 'elijahcapudoy133@gmail.com';
+        $config['smtp_pass'] = 'vffavocvxqofiezv';
         $config['smtp_port'] = 465;
         $config['mailtype']  = 'html';
         $config['charset']   = 'utf-8';
@@ -171,7 +171,7 @@ class Auth extends CI_Controller {
         $this->email->initialize($config);
         $this->email->set_newline("\r\n");
 
-        $this->email->from('xxxgerenaxxx@gmail.com', 'Complaint Management System PHP');
+        $this->email->from('elijahcapudoy133@gmail.com', 'Complaint Management System PHP');
         $this->email->to($this->input->post('email'));
 
         if ($type == 'verify') {

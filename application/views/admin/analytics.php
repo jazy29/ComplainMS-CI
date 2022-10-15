@@ -1,9 +1,86 @@
 <!-- Begin Page Content -->
+<<<<<<< HEAD
+
+<div class="container-fluid">
+    <!-- Page Heading --> 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="row">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $count_pending; ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-tie fa-2x text-gray-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <small><a class="ml-3" href="<?= base_url('admin/role'); ?>">View &rarr;</a></small>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">On Process</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $count_process; ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <small><a class="ml-3" href="<?= base_url('admin/datamember'); ?>">View &rarr;</a></small>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Done</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $count_done; ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-folder fa-2x text-gray-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <small><a class="ml-3" href="<?= base_url('menu'); ?>">View &rarr;</a></small>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Cancelled</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $count_cancelled; ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-folder-open fa-2x text-gray-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <small><a class="ml-3" href="<?= base_url('menu/submenu'); ?>">View &rarr;</a></small>
+            </div>
+        </div>
+    </div>
+  <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+
+    
+
+=======
 <div class="container-fluid">
     <!-- Page Heading --> 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
+>>>>>>> 4cf1a52c570d27adc5f6150ab50a05dff215ab17
     <div class="row">
         <div class="col-xl-8 col-md-8 mb-4" style="margin-left:70px;">
             <div class="card border-left-dark shadow h-100 py-2">
@@ -13,8 +90,16 @@
                         <div class="col-auto">
                             <!-- /.container-fluid -->
                           <?php foreach($analytics as $i)
+<<<<<<< HEAD
                               $typeIn[]=$i['type']; 
             
+=======
+<<<<<<< HEAD
+                             $typeIn[]=$i['type'];  
+=======
+                              $typeIn[]=$i['type'];  
+>>>>>>> 4cf1a52c570d27adc5f6150ab50a05dff215ab17
+>>>>>>> 11a2cf19b20a3b3b9ce9f5ca3a1b0037059340aa
                           ?>
                           <?           ?>
                           <?php foreach($analytics as $i)

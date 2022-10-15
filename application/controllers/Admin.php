@@ -220,7 +220,7 @@ class Admin extends CI_Controller {
     public function analytics()
     {
     $data = [
-<<<<<<< HEAD
+
         $this->load->model('Report_model', 'report'),
             'title' => 'Analytics',
             'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
@@ -233,9 +233,6 @@ class Admin extends CI_Controller {
             'count_pending' =>$this->db->select('*')->from('user_report')->like('status', 'Pending')->count_all_results(),
             'count_process' =>$this->db->select('*')->from('user_report')->like('status', 'Process')->count_all_results(),
             'count_cancelled' =>$this->db->select('*')->from('user_report')->like('status', 'Cancelled')->count_all_results(),
-            
-            
-=======
             'title' => 'Analytics',
             'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
             'user_role' => $this->db->get('user_role')->num_rows(),
@@ -243,15 +240,12 @@ class Admin extends CI_Controller {
             'menu' => $this->db->get('user_menu')->num_rows(),
             'sub_menu' => $this->db->get('user_sub_menu')->num_rows(),
             'report' => $this->db->get('user_report')->num_rows(),
->>>>>>> 4cf1a52c570d27adc5f6150ab50a05dff215ab17
         ];
         $this->load->model('Report_model', 'report');
         $data['analytics'] = $this->report->getTypeCount();
         $data['analyticsdatereport'] = $this->report->getDateReport();
-<<<<<<< HEAD
-=======
 
->>>>>>> 4cf1a52c570d27adc5f6150ab50a05dff215ab17
+
         $this->load->view('templates/admin_header', $data);
         $this->load->view('templates/admin_sidebar');
         $this->load->view('templates/admin_topbar', $data);

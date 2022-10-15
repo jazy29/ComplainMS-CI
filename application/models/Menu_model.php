@@ -18,5 +18,14 @@ class Menu_model extends CI_Model {
 
         return $this->db->query($query)->result_array();
     }
-    
+
+    public function getUser($data)
+    {
+        $this->db->where('name', $data['name']);
+
+        $query = $this->db->get('resident');
+        return $query->row(); 
+   
+    }
+
 }

@@ -96,12 +96,24 @@ class Auth extends CI_Controller {
         ]);
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|min_length[5]|matches[password1]');
 
+
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Create Account';
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/registration', $data);
             $this->load->view('templates/auth_footer');
         } else {
+   
+            
+            $data = array(
+                'name' => $this->input->post('name'),
+        
+            );
+
+            $this->load->model('Menu_model', 'Menu');
+            $checkRes = $this->Menu->getUser($data);
+         
+            if ($checkRes){
             $email = $this->input->post('email', true);
             $data = [
                 'name' => htmlspecialchars($this->input->post('name', true)),
@@ -128,11 +140,22 @@ class Auth extends CI_Controller {
 
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Your account has been created successfully. Please check your email to activate your account!</div>');
-            redirect('auth');
+            redirect('auth','refresh');
+        }else{
+        
+          
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> "You are not registered resident. Please contact barangay officials!"
+            </div>');
+           
+        }
+
+
         }
     }
 
     // _sendemail
+
+
     private function _sendemail($token, $type)
     {
         $config = array();

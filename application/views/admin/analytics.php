@@ -13,8 +13,10 @@
                         <div class="col-auto">
                             <!-- /.container-fluid -->
                           <?php foreach($analytics as $i)
-                              $typeIn[]=$i['type'];  
+                              $typeIn[]=$i['type']; 
+            
                           ?>
+                          <?           ?>
                           <?php foreach($analytics as $i)
                               $typecount[]=$i['tcount']; 
                           ?>

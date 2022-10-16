@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2022 at 03:38 AM
+-- Generation Time: Oct 16, 2022 at 08:00 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `resident` (
-  `id` int(11) NOT NULL,
+  `id` int(50) NOT NULL,
   `name` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -37,8 +37,9 @@ CREATE TABLE `resident` (
 --
 
 INSERT INTO `resident` (`id`, `name`) VALUES
-(2, 'Jonathan Buccat'),
-(3, 'Jose Jov');
+(1, 'Jonathan Buccat'),
+(5, 'Elijah Capudoy'),
+(6, 'Christian Dave Naguit');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (27, 'Liam Moore', 'admin@mail.com', 'admin-icn.png', '$2y$10$oPOmdz1Ph/Sob88t5NWcXObo0.EdDa7TY6ZHEYrYG5IHEfMyEtpJ6', 1, 1, 1599504982),
-(53, 'Jose Jov', 'hosejov556@inkmoto.com', 'default.jpg', '$2y$10$9m520CLj65OnqBq80MpSP.8VCJvaCXJEt2w3a60turbsL7tslanc2', 2, 0, 1665871167);
+(63, 'Jose Jov', 'hosejov556@inkmoto.com', 'default.jpg', '$2y$10$uY.mxZymw8lT9iryveuRV.1wTh4..M74HvCnKeiaxkXflJF621llW', 2, 0, 1665889663);
 
 -- --------------------------------------------------------
 
@@ -202,7 +203,8 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (10, 5, 'Report Data', 'report', 'fas fa-fw fa-file-alt', 1),
 (11, 1, 'User Data', 'admin/datamember', 'fas fa-fw fa-users', 1),
 (12, 4, 'Report History', 'report/user_report_detail', 'fas fa-fw fa-headset', 1),
-(14, 1, 'Analytics', 'admin/analytics', 'fa-solid fa-newspaper', 1);
+(14, 1, 'Analytics', 'admin/analytics', 'fa-solid fa-newspaper', 1),
+(15, 1, 'Residents', 'admin/dataresidents', 'fas fa-id-card', 1);
 
 -- --------------------------------------------------------
 
@@ -234,7 +236,8 @@ INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
 (18, 'mjbbuccat@tip.edu.ph', 'BZOPjnf2zxXwcp6gwz+NL1SebhNwByty3Ht9p4UAu2Y=', 1665859872),
 (19, 'hosejov556@inkmoto.com', 'kagUdh4s6BmOSbwpanNiPP/kqkoC0kTVCGtqfIhBhv8=', 1665859946),
 (20, 'hosejov556@inkmoto.com', 'izl653h3QWCQoBwCV8IB+yuBgLl2vz03cfPQLxAVQ+0=', 1665871167),
-(21, 'mjbbuccat@tip.edu.ph', '6murSVnDsMfaLexQM+BwzOU+BoBTs2fazl0zxb0/jSc=', 1665871217);
+(21, 'mjbbuccat@tip.edu.ph', '6murSVnDsMfaLexQM+BwzOU+BoBTs2fazl0zxb0/jSc=', 1665871217),
+(22, 'hosejov556@inkmoto.com', 'oGY/G5P8sygHHLGcntzefWIOcC739/QqjvoX3vBVNbU=', 1665889663);
 
 --
 -- Indexes for dumped tables
@@ -297,13 +300,13 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `resident`
 --
 ALTER TABLE `resident`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
@@ -327,13 +330,13 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

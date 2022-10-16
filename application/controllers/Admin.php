@@ -164,6 +164,20 @@ class Admin extends CI_Controller {
         $this->load->view('templates/admin_footer');
     }
 
+    public function dataresidents()
+    {
+        $data['title'] = 'Resident List';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user_member'] = $this->db->order_by('id', 'DESC');
+        $data['user_member'] = $this->db->get_where('resident')->result_array();
+
+        $this->load->view('templates/admin_header', $data);
+        $this->load->view('templates/admin_sidebar');
+        $this->load->view('templates/admin_topbar', $data);
+        $this->load->view('admin/data_residents', $data);
+        $this->load->view('templates/admin_footer');
+    }
+
     // info detail member
     public function detailmember($id)
     {
@@ -185,6 +199,14 @@ class Admin extends CI_Controller {
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         User deleted successfully!</div>');
         redirect('admin/datamember');
+    }
+
+    public function deleteres($id)
+    {
+        $this->db->delete('resident', ['id' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        User deleted successfully!</div>');
+        redirect('admin/dataresidents');
     }
 
     // edit member
@@ -252,4 +274,5 @@ class Admin extends CI_Controller {
         $this->load->view('admin/analytics', $data);
         $this->load->view('templates/admin_footer');
     }
+
 }

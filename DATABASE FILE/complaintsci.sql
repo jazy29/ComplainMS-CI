@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2022 at 11:52 PM
+-- Generation Time: Oct 16, 2022 at 03:38 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -63,11 +63,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (27, 'Liam Moore', 'admin@mail.com', 'admin-icn.png', '$2y$10$oPOmdz1Ph/Sob88t5NWcXObo0.EdDa7TY6ZHEYrYG5IHEfMyEtpJ6', 1, 1, 1599504982),
-(43, 'Christian Dave Naguit', 'xxxgerenaxxx@gmail.com', 'default.jpg', '$2y$10$TDTrZzIPjY7201vz.UeGmO.T4z2891KvcUJwonkkY0UpXqJouLeR2', 2, 1, 1662030009),
-(44, 'Christian', 'mcdcnaguit@tip.edu.ph', 'default.jpg', '$2y$10$CqjmEIj/1V1rH8YmkmtOEekjV0o0/P4ZFyT16J.A0L55dRUogJXmC', 2, 0, 1662203349),
-(45, 'Christian', 'mefcapudoy@tip.edu.ph', 'default.jpg', '$2y$10$Dwl9eooTKLyoHyBDHlw21Ob0xVxvMNTpaKG3h.gSvCVxMD4cvHXEm', 2, 0, 1662203404),
-(51, 'Jonathan Buccat', 'mjbbuccat@tip.edu.ph', 'default.jpg', '$2y$10$ozu0vOmGkefVeXAs8tpP3.iVgbonalTBiF8LcjzA//BPaBxa7ps3a', 2, 0, 1665859872),
-(52, 'Jose Jov', 'hosejov556@inkmoto.com', 'default.jpg', '$2y$10$BiwPljvTf7RmhyshDimj9e3I7IElmTsMlF8w4jVJFK0NdfhgCeO/2', 2, 0, 1665859946);
+(53, 'Jose Jov', 'hosejov556@inkmoto.com', 'default.jpg', '$2y$10$9m520CLj65OnqBq80MpSP.8VCJvaCXJEt2w3a60turbsL7tslanc2', 2, 0, 1665871167);
 
 -- --------------------------------------------------------
 
@@ -236,7 +232,9 @@ INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
 (16, 'mjbbuccat@tip.edu.ph', 'KMDjdnZ9KGf1yJdjuHl+FS6AToXWQl8y0tAgawjhWGI=', 1665854070),
 (17, 'mjbbuccat@tip.edu.ph', 'R7HOXXhmgT+f0pSh/WzQNRN0DKKYHW43uGlCimlUJgM=', 1665857896),
 (18, 'mjbbuccat@tip.edu.ph', 'BZOPjnf2zxXwcp6gwz+NL1SebhNwByty3Ht9p4UAu2Y=', 1665859872),
-(19, 'hosejov556@inkmoto.com', 'kagUdh4s6BmOSbwpanNiPP/kqkoC0kTVCGtqfIhBhv8=', 1665859946);
+(19, 'hosejov556@inkmoto.com', 'kagUdh4s6BmOSbwpanNiPP/kqkoC0kTVCGtqfIhBhv8=', 1665859946),
+(20, 'hosejov556@inkmoto.com', 'izl653h3QWCQoBwCV8IB+yuBgLl2vz03cfPQLxAVQ+0=', 1665871167),
+(21, 'mjbbuccat@tip.edu.ph', '6murSVnDsMfaLexQM+BwzOU+BoBTs2fazl0zxb0/jSc=', 1665871217);
 
 --
 -- Indexes for dumped tables
@@ -252,7 +250,8 @@ ALTER TABLE `resident`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `user_access_menu`
@@ -304,7 +303,7 @@ ALTER TABLE `resident`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
@@ -334,7 +333,7 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

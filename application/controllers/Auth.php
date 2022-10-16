@@ -81,8 +81,9 @@ class Auth extends CI_Controller {
             redirect('user');
         }
         
-        $this->form_validation->set_rules('name', 'Name', 'required|trim', [
-            'required' => 'Name cannot be empty!'
+        $this->form_validation->set_rules('name', 'Name', 'required|trim|is_unique[user.name]', [
+            'required' => 'Name cannot be empty!',
+            'is_unique' => 'Sorry, this Resident already have an Account!'
         ]);
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'required' => 'Ahaa, email cannot be empty!',
@@ -142,11 +143,8 @@ class Auth extends CI_Controller {
             Your account has been created successfully. Please check your email to activate your account!</div>');
             redirect('auth','refresh');
         }else{
-            redirect('auth/registration','refresh');
-          
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> "You are not registered resident. Please contact barangay officials!"
-            </div>');
-           
+             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> "You are not registered resident. Please contact barangay officials!"</div>');
+            redirect('auth');  
         }
 
 

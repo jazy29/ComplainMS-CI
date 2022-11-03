@@ -24,7 +24,6 @@ class Report_model extends CI_Model {
         $this->load->helper('date');
         $datestring = 'Year: %Y Month: %m Day: %d - %h:%i %a';
         $time = time();
-        
         $this->id               = uniqid();
         $this->status           = $post['status'];
         $this->name             = $post['name'];

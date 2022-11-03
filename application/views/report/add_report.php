@@ -84,11 +84,9 @@
                 <div class="form-group">
                <h6>  <b> <label for="type">Type of Report</label>  </b> </h6>
                     <select class="form-control" id="type" name="type">
-                        <option value="Corona Virus">Corona Virus</option>
-                        <option value="Drugs">Drugs</option>
-                        <option value="Criminal Acts">Criminal Acts</option>
-                        <option value="Sexual Harassment">Sexual Harassment</option>
-                        <option value="Natural Disasters">Natural Disasters</option>
+                        <option value="Incident Report">Incident Report</option>
+                        <option value="Afficable">Afficable</option>
+                  
                     </select>
                 </div>
                 <div class="form-group">

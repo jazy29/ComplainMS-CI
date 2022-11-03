@@ -81,8 +81,9 @@ class Auth extends CI_Controller {
             redirect('user');
         }
         
-        $this->form_validation->set_rules('name', 'Name', 'required|trim', [
-            'required' => 'Name cannot be empty!'
+        $this->form_validation->set_rules('name', 'Name', 'required|trim|is_unique[user.name]', [
+            'required' => 'Name cannot be empty!',
+            'is_unique' => 'Sorry, this Resident already have an Account!'
         ]);
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'required' => 'Ahaa, email cannot be empty!',
@@ -96,12 +97,24 @@ class Auth extends CI_Controller {
         ]);
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|min_length[5]|matches[password1]');
 
+
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Create Account';
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/registration', $data);
             $this->load->view('templates/auth_footer');
         } else {
+   
+            
+            $data = array(
+                'name' => $this->input->post('name'),
+        
+            );
+
+            $this->load->model('Menu_model', 'Menu');
+            $checkRes = $this->Menu->getUser($data);
+         
+            if ($checkRes){
             $email = $this->input->post('email', true);
             $data = [
                 'name' => htmlspecialchars($this->input->post('name', true)),
@@ -128,18 +141,26 @@ class Auth extends CI_Controller {
 
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Your account has been created successfully. Please check your email to activate your account!</div>');
-            redirect('auth');
+            redirect('auth','refresh');
+        }else{
+             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> "You are not registered resident. Please contact barangay officials!"</div>');
+            redirect('auth');  
+        }
+
+
         }
     }
 
     // _sendemail
+
+
     private function _sendemail($token, $type)
     {
         $config = array();
         $config['protocol']  = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.gmail.com';
-        $config['smtp_user'] = 'xxxgerenaxxx@gmail.com';
-        $config['smtp_pass'] = 'xhybsiuvzrbbyzkr';
+        $config['smtp_user'] = 'elijahcapudoy133@gmail.com';
+        $config['smtp_pass'] = 'vffavocvxqofiezv';
         $config['smtp_port'] = 465;
         $config['mailtype']  = 'html';
         $config['charset']   = 'utf-8';
@@ -148,7 +169,7 @@ class Auth extends CI_Controller {
         $this->email->initialize($config);
         $this->email->set_newline("\r\n");
 
-        $this->email->from('xxxgerenaxxx@gmail.com', 'Complaint Management System PHP');
+        $this->email->from('elijahcapudoy133@gmail.com', 'Complaint Management System PHP');
         $this->email->to($this->input->post('email'));
 
         if ($type == 'verify') {

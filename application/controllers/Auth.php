@@ -144,7 +144,7 @@ class Auth extends CI_Controller {
             redirect('auth','refresh');
         }else{
              $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> "You are not registered resident. Please contact barangay officials!"</div>');
-            redirect('auth');  
+            redirect('auth/registration');  
         }
 
 

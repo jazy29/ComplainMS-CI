@@ -15,7 +15,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                     <?php if($ureport['status'] == "Cancelled") : ?> 
-                        <h6 class="m-0 font-weight-bold text-danger">Status: <?= $ureport['status']; ?></h6>  
+                        <h6 class="m-0 font-weight-bold"><p>Status:  <span style="color: #ff0000"><?= $ureport['status']; ?></span</p></h6>  
                     <?php endif; ?>                      
                     </div>
                 </div>

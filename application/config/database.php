@@ -74,10 +74,10 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'dsn'	=> '3306',
+	'hostname' => '127.0.0.1:54052',
+	'username' => 'azure',
+	'password' => '6#vWHD_$',
 	'database' => 'complaintsci',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

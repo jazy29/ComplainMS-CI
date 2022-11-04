@@ -15,7 +15,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                     <?php if($report['status'] == "Cancelled") : ?> 
-                        <h6 class="m-0 font-weight-bold text-danger">Status: <?= $report['status']; ?></h6>  
+                        <h6 class="m-0 font-weight-bold"><p>Status:  <span style="color: #ff0000"><?= $report['status']; ?></span</p></h6>  
                     <?php endif; ?>                      
                     </div>
                 </div>
@@ -91,7 +91,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <?php if($report['status'] != "Cancelled") : ?> 
+                        <?php if($report['status'] != "Cancelled" && $report['status'] != "Done") : ?> 
                             <input class="btn btn-danger" href="#deleteModal" type="button" data-toggle="modal" data-target="#confirm-submit"  name="btn" value="Cancel" onclick="return deleteConfirm(this.form)"/>
                         <?php endif; ?>
                     </div>

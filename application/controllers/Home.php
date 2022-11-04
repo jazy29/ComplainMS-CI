@@ -7,7 +7,6 @@ class Home extends CI_Controller {
     public function index()
     {
         $data['title'] = 'Community Complaints';
-
         $this->load->view('templates/home_header', $data);
         $this->load->view('home/index');
         $this->load->view('templates/home_footer', $data);

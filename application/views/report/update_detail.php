@@ -34,6 +34,12 @@
                 <label for="name">Reporter's Name</label>
                 <input class="form-control" type="text" name="name" value="<?= $ureport['name']; ?>" readonly>
             </div>
+            <?php if($ureport['accused_name'] != "NA") : ?> 
+            <div class="form-group">
+                <label for="name">Accused Name</label>
+                <input class="form-control" type="text" name="accused_name" value="<?= $ureport['accused_name']; ?>" readonly>
+            </div>
+            <?php endif; ?>
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
@@ -43,11 +49,15 @@
                                 <option class="text-secondary text-center" value="Cancelled" disable <?php if( $ureport['status'] == "Cancelled") echo 'selected = "selected"'; ?> readonly>Cancelled</option>    
                             </select>
                         <?php endif; ?>
+                        <?php if($ureport['status'] == "Done") : ?> 
+                            <select class="form-control" name="status" disabled="disabled">                         
+                                <option class="text-secondary text-center" value="Done" disable <?php if( $ureport['status'] == "Cancelled") echo 'selected = "selected"'; ?> readonly>Cancelled</option>    
+                            </select>
+                        <?php endif; ?>                                
                         <?php if($ureport['status'] != "Cancelled") : ?> 
                             <select class="form-control" name="status">                                                         
                                 <option class="text-warning text-center" value="Pending" <?php if( $ureport['status'] == "Pending") echo 'selected = "selected"';?>>Pending</option>
                                 <option class="text-primary text-center" value="Process" <?php if( $ureport['status'] == "Process") echo 'selected = "selected"';?>>Process</option>
-                                <option class="text-success text-center" value="Done" <?php if( $ureport['status'] == "Done") echo 'selected = "selected"';?>>Done</option>
                             </select>
                         <?php endif; ?>
                     </div>

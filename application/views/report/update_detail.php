@@ -43,11 +43,15 @@
                                 <option class="text-secondary text-center" value="Cancelled" disable <?php if( $ureport['status'] == "Cancelled") echo 'selected = "selected"'; ?> readonly>Cancelled</option>    
                             </select>
                         <?php endif; ?>
+                        <?php if($ureport['status'] == "Done") : ?> 
+                            <select class="form-control" name="status" disabled="disabled">                         
+                                <option class="text-secondary text-center" value="Done" disable <?php if( $ureport['status'] == "Cancelled") echo 'selected = "selected"'; ?> readonly>Cancelled</option>    
+                            </select>
+                        <?php endif; ?>                                
                         <?php if($ureport['status'] != "Cancelled") : ?> 
                             <select class="form-control" name="status">                                                         
                                 <option class="text-warning text-center" value="Pending" <?php if( $ureport['status'] == "Pending") echo 'selected = "selected"';?>>Pending</option>
                                 <option class="text-primary text-center" value="Process" <?php if( $ureport['status'] == "Process") echo 'selected = "selected"';?>>Process</option>
-                                <option class="text-success text-center" value="Done" <?php if( $ureport['status'] == "Done") echo 'selected = "selected"';?>>Done</option>
                             </select>
                         <?php endif; ?>
                     </div>

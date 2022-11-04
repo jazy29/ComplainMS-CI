@@ -37,14 +37,17 @@ class Report extends CI_Controller {
         $this->form_validation->set_rules('uqid', 'UQID', 'required', [
             'required' => 'UQID is required!'
         ]);
+        $this->form_validation->set_rules('accused_name', 'Accused Name', 'required', [
+            'required' => 'Accused Name is required!'
+        ]);
         $this->form_validation->set_rules('address', 'Address', 'required', [
             'required' => 'Address is required!'
         ]);
-        $this->form_validation->set_rules('age', 'AGE', 'required|numeric', [
-            'required' => 'AGE is required!'
+        $this->form_validation->set_rules('age', 'Age', 'required|numeric', [
+            'required' => 'Age is required!'
         ]);
-        $this->form_validation->set_rules('contactnum', 'Contactnum', 'required|numeric', [
-            'required' => 'Contactnum is required!'
+        $this->form_validation->set_rules('contactnum', 'Contact Number', 'required|numeric', [
+            'required' => 'Contact Number is required!'
         ]);
         $this->form_validation->set_rules('title', 'Report Title', 'required', [
             'required' => 'Report title is required!'
@@ -56,7 +59,7 @@ class Report extends CI_Controller {
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Report';
             $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-            
+            $data['notif'] = $this->db->get_where('user_report', ['is_read' => 0])->row_array();
             $this->load->view('templates/admin_header', $data);
             $this->load->view('templates/admin_sidebar');
             $this->load->view('templates/admin_topbar', $data);

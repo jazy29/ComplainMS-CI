@@ -22,12 +22,11 @@ class Report_model extends CI_Model {
     {
         $post = $this->input->post();
         $this->load->helper('date');
-        $datestring = 'Year: %Y Month: %m Day: %d - %h:%i %a';
-        $time = time();
         
         $this->id               = uniqid();
         $this->status           = $post['status'];
         $this->name             = $post['name'];
+        $this->accused_name     = $post['accused_name'];
         $this->uqid             = $post['uqid'];
         $this->address          = $post['address'];
         $this->age              = $post['age'];
@@ -35,7 +34,8 @@ class Report_model extends CI_Model {
         $this->title            = $post['title'];
         $this->description      = $post['description'];
         $this->type             = $post['type'];
-        $this->date_reported    = mysql_to_unix('date');
+        $this->date_reported    = NOW();
+        $this->is_read          = $post['is_read'];
         $this->file             = $this->_uploadFile();
 
         return $this->db->insert('user_report', $this);

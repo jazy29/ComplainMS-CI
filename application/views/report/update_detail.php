@@ -34,6 +34,12 @@
                 <label for="name">Reporter's Name</label>
                 <input class="form-control" type="text" name="name" value="<?= $ureport['name']; ?>" readonly>
             </div>
+            <?php if($ureport['accused_name'] != "NA") : ?> 
+            <div class="form-group">
+                <label for="name">Reporter's Name</label>
+                <input class="form-control" type="text" name="accused_name" value="<?= $ureport['accused_name']; ?>" readonly>
+            </div>
+            <?php endif; ?>
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">

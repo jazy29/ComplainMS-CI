@@ -36,7 +36,7 @@
             </div>
             <?php if($report['accused_name'] != "NA") : ?> 
             <div class="form-group">
-                <label for="name">Reporter's Name</label>
+                <label for="name">Accused Name</label>
                 <input class="form-control" type="text" name="accused_name" value="<?= $report['accused_name']; ?>" readonly>
             </div>
             <?php endif; ?>

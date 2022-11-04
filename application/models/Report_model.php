@@ -22,7 +22,12 @@ class Report_model extends CI_Model {
     {
         $post = $this->input->post();
         $this->load->helper('date');
+<<<<<<< HEAD
         
+=======
+        $datestring = 'Year: %Y Month: %m Day: %d - %h:%i %a';
+        $time = time();
+>>>>>>> 9ba916a7944bc0b8c98345f0a80fd66c8609f9f9
         $this->id               = uniqid();
         $this->status           = $post['status'];
         $this->name             = $post['name'];

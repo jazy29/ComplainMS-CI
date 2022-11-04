@@ -11,6 +11,15 @@ class Menu_model extends CI_Model {
 
         return $this->db->query($query)->result_array();
     }
+    public function saveRes()
+    {
+        $post = $this->input->post();
+        $this->id               = uniqid();
+        $this->name             = $post['name'];
+   
+
+        return $this->db->insert('resident', $this);
+    }
 
     public function getAnalytics()
     {
@@ -18,5 +27,14 @@ class Menu_model extends CI_Model {
 
         return $this->db->query($query)->result_array();
     }
-    
+
+    public function getUser($data)
+    {
+        $this->db->where('name', $data['name']);
+
+        $query = $this->db->get('resident');
+        return $query->row(); 
+   
+    }
+
 }

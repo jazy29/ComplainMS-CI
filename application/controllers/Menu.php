@@ -7,6 +7,7 @@ class Menu extends CI_Controller {
     {
         parent::__construct();
         // user access
+        $this->load->model('Menu_model');
         is_logged_in();
     }
 
@@ -150,6 +151,35 @@ class Menu extends CI_Controller {
         }
     }
 
+    public function addresident()
+    {
+     
+
+        $this->form_validation->set_rules('name', 'Name', 'required', [
+            'required' => 'name is required!'
+        ]);
+
+      
+
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Residents';
+            $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Failed to add Resident!</div>');
+            redirect('admin/dataresidents','refresh');
+        } else {
+            $data = [
+                'name' => $this->input->post('name'),
+            ];
+
+            $this->db->insert('resident', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Added successfully!</div>');
+            redirect('admin/dataresidents');
+        }
+    }
+
     // edit sub menu
     public function editsubmenu($id = null)
     {
@@ -204,7 +234,7 @@ class Menu extends CI_Controller {
         $this->db->delete('user_sub_menu', ['id' => $id]);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Submenu successfully removed!</div>');
-        redirect('menu/submenu');
+        redirect('menu/usubmen');
     }
 
 }

@@ -164,6 +164,20 @@ class Admin extends CI_Controller {
         $this->load->view('templates/admin_footer');
     }
 
+    public function dataresidents()
+    {
+        $data['title'] = 'Resident List';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user_member'] = $this->db->order_by('id', 'DESC');
+        $data['user_member'] = $this->db->get_where('resident')->result_array();
+
+        $this->load->view('templates/admin_header', $data);
+        $this->load->view('templates/admin_sidebar');
+        $this->load->view('templates/admin_topbar', $data);
+        $this->load->view('admin/data_residents', $data);
+        $this->load->view('templates/admin_footer');
+    }
+
     // info detail member
     public function detailmember($id)
     {
@@ -185,6 +199,14 @@ class Admin extends CI_Controller {
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         User deleted successfully!</div>');
         redirect('admin/datamember');
+    }
+
+    public function deleteres($id)
+    {
+        $this->db->delete('resident', ['id' => $id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        User deleted successfully!</div>');
+        redirect('admin/dataresidents');
     }
 
     // edit member
@@ -220,6 +242,19 @@ class Admin extends CI_Controller {
     public function analytics()
     {
     $data = [
+
+        $this->load->model('Report_model', 'report'),
+            'title' => 'Analytics',
+            'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
+            'user_member' => $this->db->get_where('user', ['role_id' => 2])->num_rows(),
+            'user_role' => $this->db->get('user_role')->num_rows(),
+            'menu' => $this->db->get('user_menu')->num_rows(),
+            'sub_menu' => $this->db->get('user_sub_menu')->num_rows(),
+            'report' => $this->db->get('user_report')->num_rows(),
+            'count_done' =>$this->db->select('*')->from('user_report')->like('status', 'Done')->count_all_results(),
+            'count_pending' =>$this->db->select('*')->from('user_report')->like('status', 'Pending')->count_all_results(),
+            'count_process' =>$this->db->select('*')->from('user_report')->like('status', 'Process')->count_all_results(),
+            'count_cancelled' =>$this->db->select('*')->from('user_report')->like('status', 'Cancelled')->count_all_results(),
             'title' => 'Analytics',
             'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
             'user_role' => $this->db->get('user_role')->num_rows(),
@@ -232,10 +267,12 @@ class Admin extends CI_Controller {
         $data['analytics'] = $this->report->getTypeCount();
         $data['analyticsdatereport'] = $this->report->getDateReport();
 
+
         $this->load->view('templates/admin_header', $data);
         $this->load->view('templates/admin_sidebar');
         $this->load->view('templates/admin_topbar', $data);
         $this->load->view('admin/analytics', $data);
         $this->load->view('templates/admin_footer');
     }
+
 }

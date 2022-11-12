@@ -23,6 +23,16 @@
         </div>
         <div class="card-body">
         <form action="" method="post" enctype="multipart/form-data">    
+            <?php if($ureport['status'] != "Pending") : ?> 
+                <div class="row">  
+                    <div class="col-md-6">      
+                        <div class="form-group">                          
+                        <button class="badge badge-danger" style="font-size:14px;" onclick="openTab()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+                        </div>
+                    </div>       
+                </div>
+            <?php endif; ?>
+
             <div class="form-group">
                 <input class="form-control" type="hidden" name="id" value="<?= $ureport['id']; ?>" readonly>
             </div>
@@ -51,13 +61,19 @@
                         <?php endif; ?>
                         <?php if($ureport['status'] == "Done") : ?> 
                             <select class="form-control" name="status" disabled="disabled">                         
-                                <option class="text-secondary text-center" value="Done" disable <?php if( $ureport['status'] == "Cancelled") echo 'selected = "selected"'; ?> readonly>Cancelled</option>    
+                                <option class="text-secondary text-center" value="Done" disable <?php if( $ureport['status'] == "Done") echo 'selected = "selected"'; ?> readonly>Done</option>    
                             </select>
                         <?php endif; ?>                                
-                        <?php if($ureport['status'] != "Cancelled") : ?> 
+                        <?php if($ureport['status'] != "Cancelled" && $ureport['status'] != "Done") : ?> 
                             <select class="form-control" name="status">                                                         
+                            <?php if($ureport['status'] == "Pending") : ?> 
                                 <option class="text-warning text-center" value="Pending" <?php if( $ureport['status'] == "Pending") echo 'selected = "selected"';?>>Pending</option>
                                 <option class="text-primary text-center" value="Process" <?php if( $ureport['status'] == "Process") echo 'selected = "selected"';?>>Process</option>
+                            <?php endif; ?>
+                            <?php if($ureport['status'] == "Process") : ?> 
+                                <option class="text-primary text-center" value="Process" <?php if( $ureport['status'] == "Process") echo 'selected = "selected"';?> readonly>Process</option>
+                                <option class="text-success text-center" value="Done" <?php if( $ureport['status'] == "Done") echo 'selected = "selected"';?>>Done</option>
+                            <?php endif; ?>
                             </select>
                         <?php endif; ?>
                     </div>
@@ -107,7 +123,7 @@
                 <a target="_blank" class="badge badge-primary" style="font-size:16px;" href="<?= base_url('assets/img/report/').$ureport['file']; ?>"><i class="fas fa-image"></i> Check Attachment</a>
             </div>
             <!-- btn -->
-            <?php if($ureport['status'] != "Cancelled") : ?>    
+            <?php if($ureport['status'] != "Cancelled" && $ureport['status'] != "Done") : ?>    
             <div class="row">         
                 <div class="col-md-6">
                     <div class="form-group">
@@ -119,7 +135,7 @@
                         <input class="btn btn-danger" type="button" name="cancel" value="Cancel" onClick="window.location='http://localhost/ComplaintMS-CI/report';" />
                     </div>
                 </div>
-            </div>    
+            </div>
             <?php endif; ?>                
             </form> 
         </div>
@@ -130,3 +146,8 @@
 
 </div>
 <!-- End of Main Content -->
+<script>
+        function openTab() {
+            window.open('<?= site_url('report/report_pdf/'.$ureport['id']); ?>', '_blank');
+        }
+    </script>

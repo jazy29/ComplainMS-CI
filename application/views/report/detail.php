@@ -100,8 +100,9 @@
                         <?php if($report['status'] != "Cancelled" && $report['status'] != "Done") : ?> 
                             <input class="btn btn-danger" href="#deleteModal" type="button" data-toggle="modal" data-target="#confirm-submit"  name="btn" value="Cancel" onclick="return deleteConfirm(this.form)"/>
                         <?php endif; ?>
+                    
                     </div>
-                </div>                                    
+                </div>                        
             </div>                    
             </form> 
         </div>
@@ -139,3 +140,10 @@
     }); 
     }
 </script>
+<style>
+@media print {
+    #print-btn {
+        display: none;
+    }
+}
+</style>

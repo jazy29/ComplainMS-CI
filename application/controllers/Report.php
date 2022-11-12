@@ -8,6 +8,7 @@ class Report extends CI_Controller {
         parent::__construct();
         // load model
         $this->load->model('Report_model');
+        $this->load->library('pdf');
     }
 
     // index view report
@@ -189,6 +190,17 @@ class Report extends CI_Controller {
 */
 
     // delete report
+
+    public function report_pdf($id)
+    {
+                $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+                $data['ureport'] = $this->db->get_where('user_report', ['id' => $id])->row_array();
+                $html = $this->load->view('templates/admin_header', $data);
+                         
+                $html = $this->load->view('report/report_pdf', [], true);
+                $this->pdf->createPDF($html, 'Report PDF');
+        }
+
     public function deletereport($id = null)
     {
         if (!isset($id)) show_404();

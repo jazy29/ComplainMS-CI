@@ -23,7 +23,7 @@
         </div>
         <div class="card-body">
         <form action="" method="post" enctype="multipart/form-data">    
-            <?php if($ureport['status'] != "Pending") : ?> 
+            <?php if($ureport['status'] != "Pending" && !empty($ureport['accused_name'])): ?> 
                 <div class="row">  
                     <div class="col-md-6">      
                         <div class="form-group">                          
@@ -44,7 +44,7 @@
                 <label for="name">Reporter's Name</label>
                 <input class="form-control" type="text" name="name" value="<?= $ureport['name']; ?>" readonly>
             </div>
-            <?php if($ureport['accused_name'] != "NA") : ?> 
+            <?php if(!empty($ureport['accused_name'])): ?> 
             <div class="form-group">
                 <label for="name">Accused Name</label>
                 <input class="form-control" type="text" name="accused_name" value="<?= $ureport['accused_name']; ?>" readonly>

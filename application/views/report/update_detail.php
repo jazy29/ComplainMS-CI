@@ -115,7 +115,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="date_reported">Reported On</label>
-                        <input class="form-control" type="text" name="date_reported" value="<?= date('d F Y' , $ureport['date_reported']); ?>" readonly>
+                        <input class="form-control" type="text" name="date_reported" value="<?= $ureport['date_reported']; ?>" readonly>
                     </div>
                 </div>
             </div>

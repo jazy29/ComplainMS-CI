@@ -20,6 +20,7 @@
                 <small><a class="ml-3" href="<?= base_url('admin/role'); ?>">View &rarr;</a></small>
             </div>
         </div>
+   
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
@@ -102,7 +103,7 @@
             </div>
 
 
-
+  
             <div class="col-xl-8 col-md-8 mb-4" style="margin-left:70px;">
                 <div class="card border-left-success shadow h-100 py-2">
                     <div class="card-body">
@@ -113,7 +114,7 @@
 
 
                                 <?php foreach ($analyticsdatereport as $j)
-                                    $dateIn[] = date('d F Y', $j['date_reported']);
+                                    $dateIn[] =  $j['date_reported'];
 
                                 ?>
 
@@ -128,7 +129,8 @@
                         </div>
                     </div>
                     <small><a class="ml-3" href="<?= base_url('admin/datamember'); ?>">View &rarr;</a></small>
-                    <?= print_r($dateIn); ?>
+
+                 
                 </div>
             </div>
 
@@ -136,35 +138,10 @@
 
         </div>
 
-        <script>
-            const dateIn = <?= json_encode($dateIn); ?>;
-            console.log(dateIn);
-
-
-            const dateInJS = dateIn.map((day, index) => {
-                let dayjs = new Date(day);
-                return dayjs.setHours(0, 0, 0, 0);
-            });
-
-            let dateCont = [];
-
-            dateInJS.forEach(element => {
-
-                dateCont[element] = dateCont[element] + 1 || 1
-
-            });
-
-
-            console.log(dateCont);
-
-
-
-
-            console.log(dateInJS);
-            const labels = <?php echo json_encode($typeIn) ?>;
-
+<script>
+            
             const data = {
-                labels: labels,
+                labels: <?php echo json_encode($typeIn) ?>,
                 datasets: [{
                     label: 'My First dataset',
                     backgroundColor: 'rgb(255, 99, 132)',
@@ -188,12 +165,12 @@
 
 
             const data2 = {
-                labels: dateInJS,
+                labels: <?php echo json_encode($dateIn) ?>,
                 datasets: [{
                     label: 'My Second dataset',
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
-                    data: dateCont,
+                    data: <?php echo json_encode($datecount) ?>,
                 }],
             };
             /*  
@@ -210,12 +187,14 @@
                     scales: {
                         x: {
                             type: 'time',
+                            
                             time: {
                                 unit: 'day'
                             }
                         },
                         y: {
-                            beginAtZero: false
+                            beginAtZero: true
+                            
                         }
                     }
                 }

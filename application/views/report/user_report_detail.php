@@ -57,7 +57,7 @@
                                 <td><?= $r['name']; ?></td>
                                 <td><?= $r['title']; ?></td>
                                 <td><?= $r['type']; ?></td>
-                                <td><?= date('d F Y' , $r['date_reported']); ?></td>
+                                <td><?=  $r['date_reported']; ?></td>
                                 <td>
                                     <a class="badge badge-primary" style="font-size:14px;" href="<?= site_url('report/detail/'.$r['id']); ?>">Detail</a>
                                     <!--

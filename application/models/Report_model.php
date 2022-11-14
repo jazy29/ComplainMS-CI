@@ -18,11 +18,12 @@ class Report_model extends CI_Model {
         return $this->db->get_where('user_report', ['uqid' => $uqid])->row_array();
     }
 
+    
     public function save()
-    {
+    {   
         $post = $this->input->post();
-        $this->load->helper('date');
-   
+
+
         $this->id               = uniqid();
         $this->status           = $post['status'];
         $this->name             = $post['name'];
@@ -33,7 +34,7 @@ class Report_model extends CI_Model {
         $this->title            = $post['title'];
         $this->description      = $post['description'];
         $this->type             = $post['type'];
-        $this->date_reported    = now();
+        $this->date_reported    =date('Y-m-d H:i:s');
         $this->file             = $this->_uploadFile();
 
         return $this->db->insert('user_report', $this);

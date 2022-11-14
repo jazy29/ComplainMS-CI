@@ -59,7 +59,7 @@
                                 <option class="text-secondary text-center" value="Cancelled" disable <?php if( $ureport['status'] == "Cancelled") echo 'selected = "selected"'; ?> readonly>Cancelled</option>    
                             </select>
                         <?php endif; ?>
-                        <?php if($ureport['status'] == "Done") : ?> 
+                        <?php if($ureport['status'] == "Close") : ?> 
                             <select class="form-control" name="status" disabled="disabled">                         
                                 <option class="text-secondary text-center" value="Done" disable <?php if( $ureport['status'] == "Done") echo 'selected = "selected"'; ?> readonly>Done</option>    
                             </select>
@@ -130,11 +130,7 @@
                         <input class="btn btn-success" type="submit" name="btn" value="Change" />
                     </div>
                 </div>                                    
-                <div class="col-md-6">
-                    <div class="form-group">            
-                        <input class="btn btn-danger" type="button" name="cancel" value="Cancel" onClick="window.location='http://localhost/ComplaintMS-CI/report';" />
-                    </div>
-                </div>
+        
             </div>
             <?php endif; ?>                
             </form> 

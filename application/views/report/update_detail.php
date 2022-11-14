@@ -61,7 +61,7 @@
                         <?php endif; ?>
                         <?php if($ureport['status'] == "Close") : ?> 
                             <select class="form-control" name="status" disabled="disabled">                         
-                                <option class="text-secondary text-center" value="Done" disable <?php if( $ureport['status'] == "Done") echo 'selected = "selected"'; ?> readonly>Done</option>    
+                                <option class="text-secondary text-center" value="Close" disable <?php if( $ureport['status'] == "Close") echo 'selected = "selected"'; ?> readonly>Close</option>    
                             </select>
                         <?php endif; ?>                                
                         <?php if($ureport['status'] != "Cancelled" && $ureport['status'] != "Done") : ?> 

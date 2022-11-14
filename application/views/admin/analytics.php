@@ -20,7 +20,7 @@
                 <small><a class="ml-3" href="<?= base_url('admin/role'); ?>">View &rarr;</a></small>
             </div>
         </div>
-   
+
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
@@ -103,7 +103,7 @@
             </div>
 
 
-  
+
             <div class="col-xl-8 col-md-8 mb-4" style="margin-left:70px;">
                 <div class="card border-left-success shadow h-100 py-2">
                     <div class="card-body">
@@ -115,6 +115,14 @@
 
                                 <?php foreach ($analyticsdatereport as $j)
                                     $dateIn[] =  $j['date_reported'];
+
+                                ?>
+                                <?php foreach ($analyticsmonth as $j)
+                                    $month[] =  $j['month'];
+
+                                ?>
+                                <?php foreach ($analyticsmonth as $j)
+                                    $mcount[] =  $j['mcount'];
 
                                 ?>
 
@@ -130,7 +138,7 @@
                     </div>
                     <small><a class="ml-3" href="<?= base_url('admin/datamember'); ?>">View &rarr;</a></small>
 
-                 
+
                 </div>
             </div>
 
@@ -138,8 +146,7 @@
 
         </div>
 
-<script>
-            
+        <script>
             const data = {
                 labels: <?php echo json_encode($typeIn) ?>,
                 datasets: [{
@@ -165,12 +172,12 @@
 
 
             const data2 = {
-                labels: <?php echo json_encode($dateIn) ?>,
+                labels: <?php echo json_encode($month) ?>,
                 datasets: [{
                     label: 'My Second dataset',
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
-                    data: <?php echo json_encode($datecount) ?>,
+                    data: <?php echo json_encode($mcount) ?>,
                 }],
             };
             /*  
@@ -184,19 +191,7 @@
                 type: 'bar',
                 data: data2,
                 options: {
-                    scales: {
-                        x: {
-                            type: 'time',
-                            
-                            time: {
-                                unit: 'day'
-                            }
-                        },
-                        y: {
-                            beginAtZero: true
-                            
-                        }
-                    }
+                    
                 }
             };
 

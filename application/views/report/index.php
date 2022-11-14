@@ -24,8 +24,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Status</th>
-                                    <th>Name</th>                            
+                                    <th>Reporters Name</th>                            
                                     <th>UqID</th>
+                                    <th>Accused Name</th>
                                     <th>Report Title</th>
                                     <th>Report Type</th>
                                     <th>Date</th>
@@ -51,6 +52,7 @@
                                 <?php endif; ?>   
                                 <td><?= $r['name']; ?></td>
                                 <td><?= $r['uqid']; ?></td>
+                                <td><?= $r['accused_name']; ?></td>
                                 <td><?= $r['title']; ?></td>
                                 <td><?= $r['type']; ?></td>
                                 <td><?= $r['date_reported']?></td>

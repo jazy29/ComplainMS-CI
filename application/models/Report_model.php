@@ -34,6 +34,7 @@ class Report_model extends CI_Model {
         $this->title            = $post['title'];
         $this->description      = $post['description'];
         $this->type             = $post['type'];
+        $this->accused_name     = $post['accused_name'];
         $this->date_reported    =date('Y-m-d H:i:s');
         $this->file             = $this->_uploadFile();
 

@@ -20,7 +20,8 @@
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="d-none d-lg-inline text-gray-600 medium">
                         <i class="fas fa-bell fa-lg"></i>
-                        <span class="badge badge-info">5</span>
+                        <span class="badge badge-info" id="noti_number">5</span>
+                        
                     </span>
                     
                 </a>

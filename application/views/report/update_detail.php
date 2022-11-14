@@ -102,6 +102,10 @@
                 <input class="form-control" type="text" name="title" value="<?= $ureport['title']; ?>" readonly>
             </div>
             <div class="form-group">
+                <label for="title">Accused Name</label>
+                <input class="form-control" type="text" name="accused_name" value="<?= $ureport['accused_name']; ?>" readonly>
+            </div>
+            <div class="form-group">
                 <label for="description">Report Description*</label>
                 <textarea class="form-control" id="description" name="description" rows="3" readonly><?= $ureport['description']; ?></textarea>
             </div>

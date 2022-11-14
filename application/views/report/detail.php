@@ -73,6 +73,10 @@
                 <input class="form-control" type="text" name="title" value="<?= $report['title']; ?>" readonly>
             </div>
             <div class="form-group">
+                <label for="title">Accused Name</label>
+                <input class="form-control" type="text" name="accused_name" value="<?= $report['accused_name']; ?>" readonly>
+            </div>
+            <div class="form-group">
                 <label for="description">Report Description*</label>
                 <textarea class="form-control" id="description" name="description" rows="3" readonly><?= $report['description']; ?></textarea>
             </div>

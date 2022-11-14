@@ -26,19 +26,6 @@ class Report extends CI_Controller {
         $this->load->view('templates/admin_footer');
     }
 
-    public function adminReportData()
-    {
-        $data['title'] = 'Report Data';
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['reports'] = $this->db->order_by('date_reported');
-        $data['reports'] = $this->Report_model->getAll();
-            
-        $this->load->view('templates/admin_header', $data);
-        $this->load->view('templates/admin_sidebar');
-        $this->load->view('templates/admin_topbar', $data);
-        $this->load->view('report/kekw', $data);
-        $this->load->view('templates/admin_footer');
-    }
 
     // add report
     public function addreport()

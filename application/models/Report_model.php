@@ -36,6 +36,7 @@ class Report_model extends CI_Model {
         $this->type             = $post['type'];
         $this->accused_name     = $post['accused_name'];
         $this->date_reported    =date('Y-m-d H:i:s');
+        $this->is_read          = 0;
         $this->file             = $this->_uploadFile();
 
         return $this->db->insert('user_report', $this);
@@ -81,6 +82,14 @@ class Report_model extends CI_Model {
         GROUP by type;";
 
         return $this->db->query($query)->result_array();
+    }
+
+    public function notifcontroler($id){
+        $data = [
+            'is_read' => 1
+        ];
+            
+        $this->db->update('user_report', $data, ['id' => ['id']]);
     }
 
     public function getDateReport()

@@ -211,5 +211,14 @@ class Report extends CI_Controller {
             redirect('report');
         }
     }
+    public function notifcontroler($id){
+        $data = [
+            'is_read' => 1
+        ];
+            
+        $this->db->update('user_report', $data, ['id' => $id]);
+
+        return redirect(base_url('/report/update_detail/'. $id));
+    }
 
 }

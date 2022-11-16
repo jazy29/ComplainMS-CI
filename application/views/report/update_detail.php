@@ -23,8 +23,6 @@
         </div>
         <div class="card-body">
         <form action="" method="post" enctype="multipart/form-data">    
-<<<<<<< HEAD
-=======
             <?php if($ureport['status'] != "Pending" && !empty($ureport['accused_name'])): ?> 
                 <div class="row">  
                     <div class="col-md-6">      
@@ -35,7 +33,6 @@
                 </div>
             <?php endif; ?>
 
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             <div class="form-group">
                 <input class="form-control" type="hidden" name="id" value="<?= $ureport['id']; ?>" readonly>
             </div>
@@ -47,11 +44,7 @@
                 <label for="name">Reporter's Name</label>
                 <input class="form-control" type="text" name="name" value="<?= $ureport['name']; ?>" readonly>
             </div>
-<<<<<<< HEAD
-            <?php if($ureport['accused_name'] != "NA") : ?> 
-=======
             <?php if(!empty($ureport['accused_name'])): ?> 
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             <div class="form-group">
                 <label for="name">Accused Name</label>
                 <input class="form-control" type="text" name="accused_name" value="<?= $ureport['accused_name']; ?>" readonly>
@@ -66,17 +59,6 @@
                                 <option class="text-secondary text-center" value="Cancelled" disable <?php if( $ureport['status'] == "Cancelled") echo 'selected = "selected"'; ?> readonly>Cancelled</option>    
                             </select>
                         <?php endif; ?>
-<<<<<<< HEAD
-                        <?php if($ureport['status'] == "Done") : ?> 
-                            <select class="form-control" name="status" disabled="disabled">                         
-                                <option class="text-secondary text-center" value="Done" disable <?php if( $ureport['status'] == "Cancelled") echo 'selected = "selected"'; ?> readonly>Cancelled</option>    
-                            </select>
-                        <?php endif; ?>                                
-                        <?php if($ureport['status'] != "Cancelled") : ?> 
-                            <select class="form-control" name="status">                                                         
-                                <option class="text-warning text-center" value="Pending" <?php if( $ureport['status'] == "Pending") echo 'selected = "selected"';?>>Pending</option>
-                                <option class="text-primary text-center" value="Process" <?php if( $ureport['status'] == "Process") echo 'selected = "selected"';?>>Process</option>
-=======
                         <?php if($ureport['status'] == "Close") : ?> 
                             <select class="form-control" name="status" disabled="disabled">                         
                                 <option class="text-secondary text-center" value="Close" disable <?php if( $ureport['status'] == "Close") echo 'selected = "selected"'; ?> readonly>Close</option>    
@@ -92,7 +74,6 @@
                                 <option class="text-primary text-center" value="Process" <?php if( $ureport['status'] == "Process") echo 'selected = "selected"';?> readonly>Process</option>
                                 <option class="text-success text-center" value="Done" <?php if( $ureport['status'] == "Done") echo 'selected = "selected"';?>>Done</option>
                             <?php endif; ?>
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                             </select>
                         <?php endif; ?>
                     </div>
@@ -121,13 +102,6 @@
                 <input class="form-control" type="text" name="title" value="<?= $ureport['title']; ?>" readonly>
             </div>
             <div class="form-group">
-<<<<<<< HEAD
-=======
-                <label for="title">Accused Name</label>
-                <input class="form-control" type="text" name="accused_name" value="<?= $ureport['accused_name']; ?>" readonly>
-            </div>
-            <div class="form-group">
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                 <label for="description">Report Description*</label>
                 <textarea class="form-control" id="description" name="description" rows="3" readonly><?= $ureport['description']; ?></textarea>
             </div>
@@ -141,11 +115,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="date_reported">Reported On</label>
-<<<<<<< HEAD
-                        <input class="form-control" type="text" name="date_reported" value="<?= date('d F Y' , $ureport['date_reported']); ?>" readonly>
-=======
                         <input class="form-control" type="text" name="date_reported" value="<?= $ureport['date_reported']; ?>" readonly>
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                     </div>
                 </div>
             </div>
@@ -153,28 +123,15 @@
                 <a target="_blank" class="badge badge-primary" style="font-size:16px;" href="<?= base_url('assets/img/report/').$ureport['file']; ?>"><i class="fas fa-image"></i> Check Attachment</a>
             </div>
             <!-- btn -->
-<<<<<<< HEAD
-            <?php if($ureport['status'] != "Cancelled") : ?>    
-=======
             <?php if($ureport['status'] != "Cancelled" && $ureport['status'] != "Done") : ?>    
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             <div class="row">         
                 <div class="col-md-6">
                     <div class="form-group">
                         <input class="btn btn-success" type="submit" name="btn" value="Change" />
                     </div>
                 </div>                                    
-<<<<<<< HEAD
-                <div class="col-md-6">
-                    <div class="form-group">            
-                        <input class="btn btn-danger" type="button" name="cancel" value="Cancel" onClick="window.location='http://localhost/ComplaintMS-CI/report';" />
-                    </div>
-                </div>
-            </div>    
-=======
         
             </div>
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             <?php endif; ?>                
             </form> 
         </div>
@@ -184,13 +141,9 @@
 <!-- /.container-fluid -->
 
 </div>
-<<<<<<< HEAD
-<!-- End of Main Content -->
-=======
 <!-- End of Main Content -->
 <script>
         function openTab() {
             window.open('<?= site_url('report/report_pdf/'.$ureport['id']); ?>', '_blank');
         }
     </script>
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab

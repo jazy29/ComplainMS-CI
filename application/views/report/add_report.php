@@ -43,7 +43,7 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <input class="form-control" type="hidden" name="status" value="Pending" readonly>
-                                        <input class="form-control" type="hidden" name="is_read" value="0" readonly>
+                                        
                                         <h6>  <b>  <label for="uqid">User ID*</label> </b> </h6>
                                         <input class="form-control" type="text" name="uqid" value="<?=$user['id']?>" readonly>
                                     </div>
@@ -145,7 +145,7 @@
                                         <h6>  <b>  <label for="title">Reporter Name*</label></b> </h6>
                                         <input class="form-control" type="text" name="name" value="<?= $user['name']; ?>" readonly>
                                     </div>
-                                        <input class="form-control" type="hidden" name="accused_name" value="NA" readonly>
+                                        <input class="form-control" type="hidden" name="accused_name" value="" readonly>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">

@@ -24,14 +24,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Status</th>
-<<<<<<< HEAD
-                                    <th>Name</th>                            
-                                    <th>UqID</th>
-=======
                                     <th>Reporters Name</th>                            
                                     <th>UqID</th>
                                     <th>Accused Name</th>
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                                     <th>Report Title</th>
                                     <th>Report Type</th>
                                     <th>Date</th>
@@ -57,14 +52,6 @@
                                 <?php endif; ?>   
                                 <td><?= $r['name']; ?></td>
                                 <td><?= $r['uqid']; ?></td>
-<<<<<<< HEAD
-                                <td><?= $r['title']; ?></td>
-                                <td><?= $r['type']; ?></td>
-                                <td><?= date('d F y', $r['date_reported'])?></td>
-                                <td>
-                                    <a class="badge badge-primary" style="font-size:14px;" href="<?= site_url('report/update_detail/'.$r['id']); ?>">Detail</a>
-                                    <a class="badge badge-danger" style="font-size:14px;" href="#!" onclick="deleteConfirm('<?= site_url('report/deletereport/'.$r['id']); ?>')">Delete</a>
-=======
                                 <td><?= $r['accused_name']; ?></td>
                                 <td><?= $r['title']; ?></td>
                                 <td><?= $r['type']; ?></td>
@@ -72,7 +59,6 @@
                                 <td>
                                     <a class="badge badge-primary" style="font-size:14px;" href="<?= site_url('report/update_detail/'.$r['id']); ?>">Detail</a>
                                   
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                                 </td>
                             </tr>
                         <?php $index++; ?>

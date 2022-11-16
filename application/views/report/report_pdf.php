@@ -17,7 +17,7 @@
                             </tr>
                             <tr class="smallspacingBot">                            
                                 <td>Date :</td>
-                                <td><?= date('d F y', $ureport['date_reported'])?></td>
+                                <td><?= $r['date_reported']?></td>
                             </tr>
                             <tr class="smallspacingBot">
                                 <td width="30%">Subject : </td> 

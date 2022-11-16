@@ -18,15 +18,15 @@ class Report_model extends CI_Model {
         return $this->db->get_where('user_report', ['uqid' => $uqid])->row_array();
     }
 
+    
     public function save()
-    {
+    {   
         $post = $this->input->post();
-        $this->load->helper('date');
-        
+
+
         $this->id               = uniqid();
         $this->status           = $post['status'];
         $this->name             = $post['name'];
-        $this->accused_name     = $post['accused_name'];
         $this->uqid             = $post['uqid'];
         $this->address          = $post['address'];
         $this->age              = $post['age'];
@@ -34,8 +34,9 @@ class Report_model extends CI_Model {
         $this->title            = $post['title'];
         $this->description      = $post['description'];
         $this->type             = $post['type'];
-        $this->date_reported    = NOW();
-        $this->is_read          = $post['is_read'];
+        $this->accused_name     = $post['accused_name'];
+        $this->date_reported    =date('Y-m-d H:i:s');
+        $this->is_read          = 0;
         $this->file             = $this->_uploadFile();
 
         return $this->db->insert('user_report', $this);
@@ -83,6 +84,14 @@ class Report_model extends CI_Model {
         return $this->db->query($query)->result_array();
     }
 
+    public function notifcontroler($id){
+        $data = [
+            'is_read' => 1
+        ];
+            
+        $this->db->update('user_report', $data, ['id' => ['id']]);
+    }
+
     public function getDateReport()
     {
         $query = "SELECT date_reported, count(date_reported) as dcount
@@ -99,4 +108,5 @@ class Report_model extends CI_Model {
 
         return $this->db->query($query)->result_array();
     }
+
 }

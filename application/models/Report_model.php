@@ -91,4 +91,12 @@ class Report_model extends CI_Model {
 
         return $this->db->query($query)->result_array();
     }
+    public function getMonthReport()
+    {
+        $query = "SELECT monthname(date_reported) as month ,date_reported AS date, COUNT(date_reported) AS mcount 
+        FROM user_report 
+        GROUP BY month DESC;";
+
+        return $this->db->query($query)->result_array();
+    }
 }

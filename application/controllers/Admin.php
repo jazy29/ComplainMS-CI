@@ -267,7 +267,10 @@ class Admin extends CI_Controller {
         $this->load->model('Report_model', 'report');
         $data['analytics'] = $this->report->getTypeCount();
         $data['analyticsdatereport'] = $this->report->getDateReport();
+<<<<<<< HEAD
+=======
         $data['analyticsmonth'] = $this->report->getMonthReport();
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 
 
         $this->load->view('templates/admin_header', $data);

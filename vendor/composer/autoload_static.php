@@ -12,10 +12,13 @@ class ComposerStaticInit2eda66739301babdecdb60e09813ea0d
     );
 
     public static $prefixLengthsPsr4 = array (
+<<<<<<< HEAD
+=======
         's' => 
         array (
             'setasign\\Fpdi\\' => 14,
         ),
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -28,6 +31,15 @@ class ComposerStaticInit2eda66739301babdecdb60e09813ea0d
         array (
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
+<<<<<<< HEAD
+        ),
+        'P' => 
+        array (
+            'Prophecy\\' => 9,
+        ),
+        'D' => 
+        array (
+=======
             'Svg\\' => 4,
             'Sabberworm\\CSS\\' => 15,
         ),
@@ -53,16 +65,20 @@ class ComposerStaticInit2eda66739301babdecdb60e09813ea0d
         'D' => 
         array (
             'Dompdf\\' => 7,
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+<<<<<<< HEAD
+=======
         'setasign\\Fpdi\\' => 
         array (
             0 => __DIR__ . '/..' . '/setasign/fpdi/src',
         ),
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
@@ -81,6 +97,8 @@ class ComposerStaticInit2eda66739301babdecdb60e09813ea0d
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
+<<<<<<< HEAD
+=======
         'Svg\\' => 
         array (
             0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
@@ -97,10 +115,13 @@ class ComposerStaticInit2eda66739301babdecdb60e09813ea0d
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
         'Prophecy\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
         ),
+<<<<<<< HEAD
+=======
         'Mpdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
@@ -121,6 +142,7 @@ class ComposerStaticInit2eda66739301babdecdb60e09813ea0d
         array (
             0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
         ),
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -143,7 +165,10 @@ class ComposerStaticInit2eda66739301babdecdb60e09813ea0d
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+<<<<<<< HEAD
+=======
         'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',

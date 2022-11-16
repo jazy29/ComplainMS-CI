@@ -74,6 +74,8 @@
             "install-path": "../doctrine/instantiator"
         },
         {
+<<<<<<< HEAD
+=======
             "name": "dompdf/dompdf",
             "version": "v2.0.1",
             "version_normalized": "2.0.1.0",
@@ -211,6 +213,7 @@
             "install-path": "../masterminds/html5"
         },
         {
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             "name": "mikey179/vfsstream",
             "version": "v1.1.0",
             "version_normalized": "1.1.0.0",
@@ -248,6 +251,8 @@
             "install-path": "../mikey179/vfsstream"
         },
         {
+<<<<<<< HEAD
+=======
             "name": "mpdf/mpdf",
             "version": "v8.1.2",
             "version_normalized": "8.1.2.0",
@@ -328,6 +333,7 @@
             "install-path": "../mpdf/mpdf"
         },
         {
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             "name": "myclabs/deep-copy",
             "version": "1.11.0",
             "version_normalized": "1.11.0.0",
@@ -390,6 +396,8 @@
             "install-path": "../myclabs/deep-copy"
         },
         {
+<<<<<<< HEAD
+=======
             "name": "paragonie/random_compat",
             "version": "v9.99.100",
             "version_normalized": "9.99.100.0",
@@ -596,6 +604,7 @@
             "install-path": "../php-http/message-factory"
         },
         {
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             "name": "phpdocumentor/reflection-common",
             "version": "2.2.0",
             "version_normalized": "2.2.0.0",
@@ -1279,6 +1288,8 @@
             "install-path": "../phpunit/phpunit-mock-objects"
         },
         {
+<<<<<<< HEAD
+=======
             "name": "psr/http-message",
             "version": "1.0.1",
             "version_normalized": "1.0.1.0",
@@ -1444,6 +1455,7 @@
             "install-path": "../sabberworm/php-css-parser"
         },
         {
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             "name": "sebastian/code-unit-reverse-lookup",
             "version": "1.0.2",
             "version_normalized": "1.0.2.0",
@@ -2033,6 +2045,8 @@
             "install-path": "../sebastian/version"
         },
         {
+<<<<<<< HEAD
+=======
             "name": "setasign/fpdi",
             "version": "v2.3.6",
             "version_normalized": "2.3.6.0",
@@ -2108,6 +2122,7 @@
             "install-path": "../setasign/fpdi"
         },
         {
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             "name": "symfony/polyfill-ctype",
             "version": "v1.26.0",
             "version_normalized": "1.26.0.0",
@@ -2332,6 +2347,10 @@
     "dev-package-names": [
         "doctrine/instantiator",
         "mikey179/vfsstream",
+<<<<<<< HEAD
+        "myclabs/deep-copy",
+=======
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
         "phpdocumentor/reflection-common",
         "phpdocumentor/reflection-docblock",
         "phpdocumentor/type-resolver",

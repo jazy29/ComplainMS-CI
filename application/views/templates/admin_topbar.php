@@ -18,11 +18,7 @@ $jml_produk=$this->Report_model->total_rows();
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
-<<<<<<< HEAD
-                <?php
-=======
             <?php
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                     $notif = $this->db->get_where('user_report',['is_read'=>0])->result_array();
                     $notif_count = count($notif);
                 ?>
@@ -37,12 +33,6 @@ $jml_produk=$this->Report_model->total_rows();
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                     <?php foreach($notif as $data): ?>
-<<<<<<< HEAD
-                        <a class="dropdown-item" href="#"><?= $data['name'] ?></a>                                            
-                        <a class="dropdown-item" href="#"><?= $data['accused_name'] ?></a>    
-                        <div class="dropdown-divider"></div>
-                    <?php endforeach; ?>
-=======
 
                         <?php if($data['is_read']==0):?>
                         <a class="dropdown-item" href="<?= base_url('report/notifcontroler/' . $data['id']) ?>"><?= $data['name'] ?> <br> <?= $data['title'] ?></a>                                            
@@ -51,7 +41,6 @@ $jml_produk=$this->Report_model->total_rows();
                     <?php endforeach; ?>
                              
                     <div class="dropdown-divider"></div>
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                 </div>
                 </li>
 

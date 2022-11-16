@@ -8,10 +8,6 @@ class Report extends CI_Controller {
         parent::__construct();
         // load model
         $this->load->model('Report_model');
-<<<<<<< HEAD
-=======
-        $this->load->library('pdf');
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
     }
 
     // index view report
@@ -29,10 +25,6 @@ class Report extends CI_Controller {
         $this->load->view('templates/admin_footer');
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
     // add report
     public function addreport()
     {
@@ -197,8 +189,7 @@ class Report extends CI_Controller {
 */
 
     // delete report
-<<<<<<< HEAD
-=======
+
 
     public function report_pdf($id)
     {

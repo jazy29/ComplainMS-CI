@@ -18,7 +18,7 @@
                     $notif = $this->db->get_where('user_report',['is_read'=>0])->result_array();
                     $notif_count = count($notif);
                 ?>
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
+
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

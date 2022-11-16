@@ -8,6 +8,7 @@ class Admin extends CI_Controller {
         parent::__construct();
         // user access
         is_logged_in();
+        $this->load->model('Report_model');
     }
 
     // function index view

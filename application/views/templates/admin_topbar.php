@@ -1,3 +1,7 @@
+<?php 
+$this->load->model("Report_model");
+$jml_produk=$this->Report_model->total_rows();
+?>
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
 
@@ -14,27 +18,25 @@
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
-
+                <?php
+                    $notif = $this->db->get_where('user_report',['is_read'=>0])->result_array();
+                    $notif_count = count($notif);
+                ?>
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="d-none d-lg-inline text-gray-600 medium">
                         <i class="fas fa-bell fa-lg"></i>
-                        <span class="badge badge-info">5</span>
+                        <span class="badge badge-info"><?= $notif_count ?></span>
                     </span>
-                    
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="<?= base_url('user'); ?>">
-                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                        My Profile
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
-                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Sign Out
-                    </a>    
+                    <?php foreach($notif as $data): ?>
+                        <a class="dropdown-item" href="#"><?= $data['name'] ?></a>                                            
+                        <a class="dropdown-item" href="#"><?= $data['accused_name'] ?></a>    
+                        <div class="dropdown-divider"></div>
+                    <?php endforeach; ?>
                 </div>
                 </li>
 
@@ -64,3 +66,9 @@
 
         </nav>
         <!-- End of Topbar -->
+
+        <script type="text/javascript">
+            <script type="text/javascript">
+         
+              </script>
+          </script>

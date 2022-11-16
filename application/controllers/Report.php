@@ -26,7 +26,6 @@ class Report extends CI_Controller {
         $this->load->view('templates/admin_footer');
     }
 
-
     // add report
     public function addreport()
     {
@@ -191,7 +190,6 @@ class Report extends CI_Controller {
 */
 
     // delete report
-
     public function report_pdf($id)
     {
                 $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();

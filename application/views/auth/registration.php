@@ -1,9 +1,73 @@
+<<<<<<< HEAD
+
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#060c22 ;">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li> </li>
+        <li> </li>
+        <li> </li>
+        <li> </li>
+        
+        </ul>
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-100" href="<?= site_url('home'); ?>">
+        <img
+          src="../assets/img/logobims.png"
+          height="50"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+
+<div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-5" >
+        <div class="card-body p-1">
+        <!-- Nested Row within Card Body -->
+          <div class="row" style="background-color:#c0c0c0;" >
+=======
 <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
           <div class="row">
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
               <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                 <div class="col-lg-7">
                   <div class="p-5">
@@ -47,4 +111,10 @@
               </div>
             </div>
           </div>
+<<<<<<< HEAD
         </div>
+
+  
+=======
+        </div>
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab

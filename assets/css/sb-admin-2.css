@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 /*!
  * Start Bootstrap - SB Admin 2 v4.1.1 (https://startbootstrap.com/themes/sb-admin-2)
  * Copyright 2013-2020 Start Bootstrap
@@ -10,6 +13,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 :root {
 	--blue: #4e73df;
 	--indigo: #6610f2;
@@ -154,6 +158,10 @@ strong {
 
 small {
 	font-size: 80%;
+<<<<<<< HEAD
+	
+=======
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 }
 
 sub,
@@ -578,7 +586,11 @@ pre code {
 .container {
 	width: 100%;
 	padding-right: 0.75rem;
+<<<<<<< HEAD
+	padding-left: 100rem;
+=======
 	padding-left: 0.75rem;
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -5047,7 +5059,11 @@ input[type="button"].btn-block {
 .card-header {
 	padding: 0.75rem 1.25rem;
 	margin-bottom: 0;
+<<<<<<< HEAD
+	background-color: #2b3247;
+=======
 	background-color: #f8f9fc;
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 	border-bottom: 1px solid #e3e6f0;
 }
 

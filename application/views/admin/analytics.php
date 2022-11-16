@@ -73,6 +73,9 @@
         <!-- Page Heading -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@%5E3%22%3E"></script>
+        <script src="https://cdn.jsdelivr.net/npm/luxon@%5E2%22%3E"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@%5E1%22%3E"></script>
         <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
 

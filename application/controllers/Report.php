@@ -201,13 +201,6 @@ class Report extends CI_Controller {
                 $html = $this->load->view('report/report_pdf', [], true);
                 $this->pdf->createPDF($html, 'Report PDF');
         }
-
-        public function get_tot(){
-            $tot = $this->Report_model->total_rows();
-            $result['tot'] = $tot;
-            $result['msg'] = "Berhasil direfresh secara realtime";
-            echo json_encode($result);
-        }
         
         public function notifcontroler($id){
             $data = [

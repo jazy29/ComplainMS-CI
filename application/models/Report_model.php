@@ -3,8 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Report_model extends CI_Model {
 
-    public $table = 'user_report';
-    public $id = 'id';
     public function getAll()
     {
         return $this->db->get('user_report')->result_array();
@@ -20,15 +18,15 @@ class Report_model extends CI_Model {
         return $this->db->get_where('user_report', ['uqid' => $uqid])->row_array();
     }
 
-    
     public function save()
-    {   
+    {
         $post = $this->input->post();
-
-
+        $this->load->helper('date');
+        
         $this->id               = uniqid();
         $this->status           = $post['status'];
         $this->name             = $post['name'];
+        $this->accused_name     = $post['accused_name'];
         $this->uqid             = $post['uqid'];
         $this->address          = $post['address'];
         $this->age              = $post['age'];
@@ -36,9 +34,8 @@ class Report_model extends CI_Model {
         $this->title            = $post['title'];
         $this->description      = $post['description'];
         $this->type             = $post['type'];
-        $this->accused_name     = $post['accused_name'];
-        $this->date_reported    =date('Y-m-d H:i:s');
-        $this->is_read          = 0;
+        $this->date_reported    = NOW();
+        $this->is_read          = $post['is_read'];
         $this->file             = $this->_uploadFile();
 
         return $this->db->insert('user_report', $this);
@@ -86,14 +83,6 @@ class Report_model extends CI_Model {
         return $this->db->query($query)->result_array();
     }
 
-    public function notifcontroler($id){
-        $data = [
-            'is_read' => 1
-        ];
-            
-        $this->db->update('user_report', $data, ['id' => ['id']]);
-    }
-
     public function getDateReport()
     {
         $query = "SELECT date_reported, count(date_reported) as dcount
@@ -101,80 +90,5 @@ class Report_model extends CI_Model {
         GROUP by date_reported;";
 
         return $this->db->query($query)->result_array();
-    }
-    public function getMonthReport()
-    {
-        $query = "SELECT monthname(date_reported) as month ,date_reported AS date, COUNT(date_reported) AS mcount 
-        FROM user_report 
-        GROUP BY month DESC;";
-
-        return $this->db->query($query)->result_array();
-    }
-
-    // get total rows
-    function total_rows($q = NULL) {
-        $this->db->like('id', $q);
-	$this->db->or_like('status', $q);
-	$this->db->or_like('name', $q);
-	$this->db->or_like('accused_name', $q);
-	$this->db->or_like('uqid', $q);
-	$this->db->or_like('address', $q);
-    $this->db->or_like('contactnum', $q);
-    $this->db->or_like('title', $q);
-    $this->db->or_like('description', $q);
-    $this->db->or_like('type', $q);
-    $this->db->or_like('date_reported', $q);
-    $this->db->or_like('description', $q);
-	$this->db->from($this->table);
-        return $this->db->count_all_results();
-    }     
-
-    public function cnotif(){
-        if(isset($_POST['view'])){
-
-            // $con = mysqli_connect("localhost", "root", "", "notif");
-            
-            if($_POST["view"] != '')
-            {
-                $update_query = "UPDATE user_report SET is_read = 1 WHERE is_read=0";
-                return $this->db->query($update_query)->result_array();
-            }
-            $query = "SELECT * FROM user_report ORDER BY id";
-            $result = mysqli_query($query);
-            $output = '';
-            if(mysqli_num_rows($result) > 0)
-            {
-             while($row = mysqli_fetch_array($result))
-             {
-               $output .= '
-               <li>
-               <a href="#">
-               <strong>'.$row["name"].'</strong><br />
-               <small><em>'.$row["type"].'</em></small>
-               </a>
-               </li>
-               ';
-            
-             }
-            }
-            else{
-                 $output .= '
-                 <li><a href="#" class="text-bold text-italic">No Noti Found</a></li>';
-            }
-            
-            
-            
-            $status_query = "SELECT * FROM user_report WHERE is_read=0";
-            $result_query = mysqli_query($status_query);
-            $count = mysqli_num_rows($result_query);
-            $data = array(
-                'notification' => $output,
-                'unseen_notification'  => $count
-            );
-            
-            echo json_encode($data);
-            
-            }
-
     }
 }

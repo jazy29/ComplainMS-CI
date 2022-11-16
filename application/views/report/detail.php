@@ -34,7 +34,11 @@
                 <label for="name">Reporter's Name</label>
                 <input class="form-control" type="text" name="name" value="<?= $report['name']; ?>" readonly>
             </div>
+<<<<<<< HEAD
             <?php if($report['accused_name'] != "NA") : ?> 
+=======
+            <?php if(!empty($ureport['accused_name'])): ?> 
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             <div class="form-group">
                 <label for="name">Accused Name</label>
                 <input class="form-control" type="text" name="accused_name" value="<?= $report['accused_name']; ?>" readonly>
@@ -73,6 +77,13 @@
                 <input class="form-control" type="text" name="title" value="<?= $report['title']; ?>" readonly>
             </div>
             <div class="form-group">
+<<<<<<< HEAD
+=======
+                <label for="title">Accused Name</label>
+                <input class="form-control" type="text" name="accused_name" value="<?= $report['accused_name']; ?>" readonly>
+            </div>
+            <div class="form-group">
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                 <label for="description">Report Description*</label>
                 <textarea class="form-control" id="description" name="description" rows="3" readonly><?= $report['description']; ?></textarea>
             </div>
@@ -86,7 +97,11 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="date_reported">Reported On</label>
+<<<<<<< HEAD
                         <input class="form-control" type="text" name="date_reported" value="<?= date('d F Y' , $report['date_reported']); ?>" readonly>
+=======
+                        <input class="form-control" type="text" name="date_reported" value="<?=  $report['date_reported']; ?>" readonly>
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                     </div>
                 </div>
             </div>
@@ -100,8 +115,14 @@
                         <?php if($report['status'] != "Cancelled" && $report['status'] != "Done") : ?> 
                             <input class="btn btn-danger" href="#deleteModal" type="button" data-toggle="modal" data-target="#confirm-submit"  name="btn" value="Cancel" onclick="return deleteConfirm(this.form)"/>
                         <?php endif; ?>
+<<<<<<< HEAD
                     </div>
                 </div>                                    
+=======
+                    
+                    </div>
+                </div>                        
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
             </div>                    
             </form> 
         </div>
@@ -138,4 +159,15 @@
         $('#form1').submit();
     }); 
     }
+<<<<<<< HEAD
 </script>
+=======
+</script>
+<style>
+@media print {
+    #print-btn {
+        display: none;
+    }
+}
+</style>
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab

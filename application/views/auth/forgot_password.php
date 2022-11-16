@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#060c22 ;">
   <!-- Container wrapper -->
   <div class="container-fluid">
@@ -51,6 +52,8 @@
 
   
   
+=======
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
   <div class="container">
 
     <!-- Outer Row -->

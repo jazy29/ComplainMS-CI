@@ -14,12 +14,20 @@
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
+<<<<<<< HEAD
 
+=======
+            <?php
+                    $notif = $this->db->get_where('user_report',['is_read'=>0])->result_array();
+                    $notif_count = count($notif);
+                ?>
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="d-none d-lg-inline text-gray-600 medium">
                         <i class="fas fa-bell fa-lg"></i>
+<<<<<<< HEAD
                         <span class="badge badge-info">5</span>
                     </span>
                     
@@ -35,6 +43,22 @@
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Sign Out
                     </a>    
+=======
+                        <span class="badge badge-info"><?= $notif_count ?></span>
+                    </span>
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <?php foreach($notif as $data): ?>
+
+                        <?php if($data['is_read']==0):?>
+                        <a class="dropdown-item" href="<?= base_url('report/notifcontroler/' . $data['id']) ?>"><?= $data['name'] ?> <br> <?= $data['title'] ?></a>                                            
+                        <?php else:?>
+                            <?php endif?>
+                    <?php endforeach; ?>
+                             
+                    <div class="dropdown-divider"></div>
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                 </div>
                 </li>
 

@@ -31,6 +31,10 @@
                                     <th>Status</th>
                                     <th>Name</th>
                                     <th>Report Title</th>
+<<<<<<< HEAD
+=======
+                                    <th>Accused Name</th>
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                                     <th>Report Type</th>
                                     <th>Date</th>
                                     <th>Action</th>
@@ -56,8 +60,14 @@
                                 <?php endif; ?>                                
                                 <td><?= $r['name']; ?></td>
                                 <td><?= $r['title']; ?></td>
+<<<<<<< HEAD
                                 <td><?= $r['type']; ?></td>
                                 <td><?= date('d F Y' , $r['date_reported']); ?></td>
+=======
+                                <td><?= $r['accused_name']; ?></td>
+                                <td><?= $r['type']; ?></td>
+                                <td><?=  $r['date_reported']; ?></td>
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
                                 <td>
                                     <a class="badge badge-primary" style="font-size:14px;" href="<?= site_url('report/detail/'.$r['id']); ?>">Detail</a>
                                     <!--

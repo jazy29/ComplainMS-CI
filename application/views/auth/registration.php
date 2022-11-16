@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -59,6 +60,14 @@
         <div class="card-body p-1">
         <!-- Nested Row within Card Body -->
           <div class="row" style="background-color:#c0c0c0;" >
+=======
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+          <div class="row">
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
               <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                 <div class="col-lg-7">
                   <div class="p-5">
@@ -102,6 +111,10 @@
               </div>
             </div>
           </div>
+<<<<<<< HEAD
         </div>
 
   
+=======
+        </div>
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab

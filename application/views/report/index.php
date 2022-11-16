@@ -24,8 +24,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Status</th>
-                                    <th>Name</th>                            
+                                    <th>Reporters Name</th>                            
                                     <th>UqID</th>
+                                    <th>Accused Name</th>
                                     <th>Report Title</th>
                                     <th>Report Type</th>
                                     <th>Date</th>
@@ -51,12 +52,13 @@
                                 <?php endif; ?>   
                                 <td><?= $r['name']; ?></td>
                                 <td><?= $r['uqid']; ?></td>
+                                <td><?= $r['accused_name']; ?></td>
                                 <td><?= $r['title']; ?></td>
                                 <td><?= $r['type']; ?></td>
-                                <td><?= date('d F y', $r['date_reported'])?></td>
+                                <td><?= $r['date_reported']?></td>
                                 <td>
                                     <a class="badge badge-primary" style="font-size:14px;" href="<?= site_url('report/update_detail/'.$r['id']); ?>">Detail</a>
-                                    <a class="badge badge-danger" style="font-size:14px;" href="#!" onclick="deleteConfirm('<?= site_url('report/deletereport/'.$r['id']); ?>')">Delete</a>
+                                  
                                 </td>
                             </tr>
                         <?php $index++; ?>

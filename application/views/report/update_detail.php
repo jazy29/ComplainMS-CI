@@ -59,9 +59,9 @@
                                 <option class="text-secondary text-center" value="Cancelled" disable <?php if( $ureport['status'] == "Cancelled") echo 'selected = "selected"'; ?> readonly>Cancelled</option>    
                             </select>
                         <?php endif; ?>
-                        <?php if($ureport['status'] == "Done") : ?> 
+                        <?php if($ureport['status'] == "Close") : ?> 
                             <select class="form-control" name="status" disabled="disabled">                         
-                                <option class="text-secondary text-center" value="Done" disable <?php if( $ureport['status'] == "Done") echo 'selected = "selected"'; ?> readonly>Done</option>    
+                                <option class="text-secondary text-center" value="Close" disable <?php if( $ureport['status'] == "Close") echo 'selected = "selected"'; ?> readonly>Close</option>    
                             </select>
                         <?php endif; ?>                                
                         <?php if($ureport['status'] != "Cancelled" && $ureport['status'] != "Done") : ?> 
@@ -102,6 +102,10 @@
                 <input class="form-control" type="text" name="title" value="<?= $ureport['title']; ?>" readonly>
             </div>
             <div class="form-group">
+                <label for="title">Accused Name</label>
+                <input class="form-control" type="text" name="accused_name" value="<?= $ureport['accused_name']; ?>" readonly>
+            </div>
+            <div class="form-group">
                 <label for="description">Report Description*</label>
                 <textarea class="form-control" id="description" name="description" rows="3" readonly><?= $ureport['description']; ?></textarea>
             </div>
@@ -115,7 +119,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="date_reported">Reported On</label>
-                        <input class="form-control" type="text" name="date_reported" value="<?= date('d F Y' , $ureport['date_reported']); ?>" readonly>
+                        <input class="form-control" type="text" name="date_reported" value="<?= $ureport['date_reported']; ?>" readonly>
                     </div>
                 </div>
             </div>
@@ -130,11 +134,7 @@
                         <input class="btn btn-success" type="submit" name="btn" value="Change" />
                     </div>
                 </div>                                    
-                <div class="col-md-6">
-                    <div class="form-group">            
-                        <input class="btn btn-danger" type="button" name="cancel" value="Cancel" onClick="window.location='http://localhost/ComplaintMS-CI/report';" />
-                    </div>
-                </div>
+        
             </div>
             <?php endif; ?>                
             </form> 

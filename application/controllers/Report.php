@@ -26,6 +26,7 @@ class Report extends CI_Controller {
         $this->load->view('templates/admin_footer');
     }
 
+
     // add report
     public function addreport()
     {
@@ -224,6 +225,15 @@ class Report extends CI_Controller {
         if ($report->delete($id)) {
             redirect('report');
         }
+    }
+    public function notifcontroler($id){
+        $data = [
+            'is_read' => 1
+        ];
+            
+        $this->db->update('user_report', $data, ['id' => $id]);
+
+        return redirect(base_url('/report/update_detail/'. $id));
     }
 
 }

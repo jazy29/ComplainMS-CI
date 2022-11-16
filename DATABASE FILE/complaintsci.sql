@@ -1,4 +1,16 @@
 -- phpMyAdmin SQL Dump
+<<<<<<< HEAD
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 04, 2022 at 10:39 AM
+-- Server version: 10.1.40-MariaDB
+-- PHP Version: 7.3.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+=======
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
@@ -8,6 +20,7 @@
 -- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -66,8 +79,12 @@ INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_a
 (27, 'Admin', 'admin@mail.com', '2304226.png', '$2y$10$oPOmdz1Ph/Sob88t5NWcXObo0.EdDa7TY6ZHEYrYG5IHEfMyEtpJ6', 1, 1, 1599504982),
 (45, 'Christian', 'mefcapudoy@tip.edu.ph', 'default.jpg', '$2y$10$Dwl9eooTKLyoHyBDHlw21Ob0xVxvMNTpaKG3h.gSvCVxMD4cvHXEm', 2, 0, 1662203404),
 (47, 'christian', 'xxxgerenaxxx@gmail.com', 'default.jpg', '$2y$10$ZobVS6lMtg4O1CbgbOSjtuK3eqw9dCRfwhd7TKjnjA3ZWjei33kL2', 2, 1, 1663847547),
+<<<<<<< HEAD
+(57, 'Christian Dave Naguit', 'mcdcnaguit@tip.edu.ph', 'default.jpg', '$2y$10$6Tjk5ybcmjPNmCoGFjRJOu/KYRSdIC67MQ40cywhZPAP9wR8gyDP6', 2, 1, 1667553955);
+=======
 (57, 'Christian Dave Naguit', 'mcdcnaguit@tip.edu.ph', 'default.jpg', '$2y$10$6Tjk5ybcmjPNmCoGFjRJOu/KYRSdIC67MQ40cywhZPAP9wR8gyDP6', 2, 1, 1667553955),
 (58, 'Jonathan Buccat', 'mjbbuccat@tip.edu.ph', 'default.jpg', '$2y$10$3OvsN3nL37VxlaMaIGySjeE/EGY8YWOO6yLOHPhDmyR0kN1gCe1Im', 2, 1, 1668252166);
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 
 -- --------------------------------------------------------
 
@@ -133,7 +150,11 @@ CREATE TABLE `user_report` (
   `title` varchar(128) NOT NULL,
   `description` text NOT NULL,
   `type` text NOT NULL,
+<<<<<<< HEAD
+  `date_reported` int(11) NOT NULL,
+=======
   `date_reported` date NOT NULL,
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
   `file` varchar(64) NOT NULL DEFAULT 'default.jpg',
   `is_read` int(1) DEFAULT NULL,
   `accused_name` varchar(30) DEFAULT NULL
@@ -144,6 +165,17 @@ CREATE TABLE `user_report` (
 --
 
 INSERT INTO `user_report` (`id`, `name`, `status`, `uqid`, `address`, `age`, `contactnum`, `title`, `description`, `type`, `date_reported`, `file`, `is_read`, `accused_name`) VALUES
+<<<<<<< HEAD
+('636494d5c487b', 'christian', 'Pending', '47', 'asda', 1231, 231321, '3123', 'asdad', 'Drugs', 1667536085, 'default.jpg', 0, 'asda'),
+('6364952fae681', 'christian', 'Pending', '47', '1231', 12313, 2147483647, '12313213', 'asda', 'Corona Virus', 1667536175, 'default.jpg', 0, 'NA'),
+('636499429135e', 'christian', 'Pending', '47', 'asdasd', 1231, 3213123, '12131', 'sdasd', 'Drugs', 1667537218, 'default.jpg', 0, 'asdad'),
+('6364d41e3e46a', 'christian', 'Pending', '47', '123', 1213, 123, 'CRTest', 'CRTest', 'Drugs', 1667552286, 'default.jpg', 0, 'Elijankss'),
+('6364d4314f67f', 'christian', 'Pending', '47', '123', 123, 123, 'IRTest', 'IRTest', 'Corona Virus', 1667552305, 'default.jpg', 0, 'NA'),
+('6364d4953c15b', 'christian', 'Pending', '47', 'Basig', 21, 2147483647, 'CRTest', 'CRTest', 'Drugs', 1667552405, 'default.jpg', 0, 'Jojonks'),
+('6364d4c3e70b9', 'christian', 'Pending', '47', 'Bulaacan', 25, 915852368, 'IRTest', 'IRTest', 'Corona Virus', 1667552451, 'default.jpg', 0, 'NA'),
+('6364dccade406', 'Christian Dave Naguit', 'Pending', '57', 'sad', 123, 123, 'TestLatest1', 'TestLatest1', 'Drugs', 1667554506, 'default.jpg', 0, '123asd'),
+('6364dce5c5068', 'Christian Dave Naguit', 'Pending', '57', '123', 123, 123, 'TestLatest2', 'TestLatest2', 'Corona Virus', 1667554533, 'default.jpg', 0, 'NA');
+=======
 ('63708b55c7c54', 'Jonathan Buccat', 'Pending', '58', 'q123', 12, 2147483647, 'Analytics', 'saed', 'Drugs', '2022-11-16', 'default.jpg', NULL, NULL),
 ('63708be07bbdd', 'Jonathan Buccat', 'Pending', '58', '497 N. CRUZ Street Palatiw Pasig City', 12, 2147483647, 'sd', 'dasd', 'Drugs', '2022-11-16', 'default.jpg', NULL, NULL),
 ('63708c3281fae', 'Jonathan Buccat', 'Pending', '58', '497 N. CRUZ Street Palatiw Pasig City', 12, 2147483647, 'Analytics', 'dasd', 'Drugs', '2022-11-13', 'default.jpg', NULL, NULL),
@@ -152,6 +184,7 @@ INSERT INTO `user_report` (`id`, `name`, `status`, `uqid`, `address`, `age`, `co
 ('6371dc3a1193e', 'Jonathan Buccat', 'Pending', '58', '497 N. CRUZ Street Palatiw Pasig City', 12, 2147483647, '23', 'asdas', 'Drugs', '2022-11-15', 'default.jpg', NULL, NULL),
 ('6371de7a6989e', 'Jonathan Buccat', 'Pending', '58', '497 N. CRUZ Street Palatiw Pasig City', 12, 2147483647, 'Rx 580', 'das', 'Drugs', '2022-11-14', 'default.jpg', NULL, NULL),
 ('6371e13402df3', 'Jonathan Buccat', 'Pending', '58', '497 N. CRUZ Street Palatiw Pasig City', 12, 2147483647, 'Rx 580', 'asd', 'Drugs', '2022-11-14', 'default.jpg', NULL, NULL);
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 
 -- --------------------------------------------------------
 
@@ -203,8 +236,12 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (10, 5, 'Report Data', 'report', 'fas fa-fw fa-file-alt', 1),
 (11, 1, 'User Data', 'admin/datamember', 'fas fa-fw fa-users', 1),
 (12, 4, 'Report History', 'report/user_report_detail', 'fas fa-fw fa-headset', 1),
+<<<<<<< HEAD
+(13, 1, 'Analytics', 'admin/analytics', 'fas fa-analytics', 1);
+=======
 (13, 1, 'Analytics', 'admin/analytics', 'fas fa-analytics', 1),
 (14, 1, 'Residents', 'admin/dataresidents', 'fa-solid fa-newspaper', 1);
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 
 -- --------------------------------------------------------
 
@@ -297,7 +334,11 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
+<<<<<<< HEAD
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+=======
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
@@ -321,13 +362,21 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
+<<<<<<< HEAD
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+=======
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 
 --
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
+<<<<<<< HEAD
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+=======
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

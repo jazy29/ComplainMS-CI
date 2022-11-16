@@ -1,9 +1,16 @@
+<<<<<<< HEAD
+REQUIREMENTS :
+
+**Database Name: complaintsci**
+
+=======
 **Log on to codeastro.com for more projects!**
 
 **Database Name: complaintsci**
 
 **Developed by Aditiya Permana**
 
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 **Recommended PHP version 5.6, 7.4**
 
 

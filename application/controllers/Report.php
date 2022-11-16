@@ -8,7 +8,10 @@ class Report extends CI_Controller {
         parent::__construct();
         // load model
         $this->load->model('Report_model');
+<<<<<<< HEAD
+=======
         $this->load->library('pdf');
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
     }
 
     // index view report
@@ -26,7 +29,10 @@ class Report extends CI_Controller {
         $this->load->view('templates/admin_footer');
     }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
     // add report
     public function addreport()
     {
@@ -191,6 +197,8 @@ class Report extends CI_Controller {
 */
 
     // delete report
+<<<<<<< HEAD
+=======
 
     public function report_pdf($id)
     {
@@ -202,6 +210,7 @@ class Report extends CI_Controller {
                 $this->pdf->createPDF($html, 'Report PDF');
         }
 
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
     public function deletereport($id = null)
     {
         if (!isset($id)) show_404();
@@ -211,6 +220,8 @@ class Report extends CI_Controller {
             redirect('report');
         }
     }
+<<<<<<< HEAD
+=======
     public function notifcontroler($id){
         $data = [
             'is_read' => 1
@@ -220,5 +231,6 @@ class Report extends CI_Controller {
 
         return redirect(base_url('/report/update_detail/'. $id));
     }
+>>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 
 }

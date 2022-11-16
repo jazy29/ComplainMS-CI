@@ -8,10 +8,7 @@ class Report extends CI_Controller {
         parent::__construct();
         // load model
         $this->load->model('Report_model');
-<<<<<<< HEAD
-=======
         $this->load->library('pdf');
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
     }
 
     // index view report
@@ -29,10 +26,6 @@ class Report extends CI_Controller {
         $this->load->view('templates/admin_footer');
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
     // add report
     public function addreport()
     {
@@ -197,9 +190,6 @@ class Report extends CI_Controller {
 */
 
     // delete report
-<<<<<<< HEAD
-=======
-
     public function report_pdf($id)
     {
                 $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -209,8 +199,17 @@ class Report extends CI_Controller {
                 $html = $this->load->view('report/report_pdf', [], true);
                 $this->pdf->createPDF($html, 'Report PDF');
         }
+        
+        public function notifcontroler($id){
+            $data = [
+                'is_read' => 1
+            ];
+                
+            $this->db->update('user_report', $data, ['id' => $id]);
 
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
+            return redirect(base_url('/report/update_detail/'. $id));
+        }
+
     public function deletereport($id = null)
     {
         if (!isset($id)) show_404();
@@ -220,17 +219,5 @@ class Report extends CI_Controller {
             redirect('report');
         }
     }
-<<<<<<< HEAD
-=======
-    public function notifcontroler($id){
-        $data = [
-            'is_read' => 1
-        ];
-            
-        $this->db->update('user_report', $data, ['id' => $id]);
-
-        return redirect(base_url('/report/update_detail/'. $id));
-    }
->>>>>>> 7392ddf32b7c42a3a21269af76bb78ddf008a2ab
 
 }

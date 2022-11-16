@@ -52,7 +52,8 @@ CREATE TABLE `resident` (
 INSERT INTO `resident` (`id`, `name`) VALUES
 (1, 'Jonathan Buccat'),
 (2, 'Elijah Capudoy'),
-(3, 'Christian Dave Naguit');
+(3, 'Christian Dave Naguit'),
+(4, 'Peter Jansen Noble');
 
 -- --------------------------------------------------------
 

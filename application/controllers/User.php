@@ -8,6 +8,7 @@ class User extends CI_Controller {
         parent::__construct();
         // user access
         is_logged_in();
+        $this->load->model('Report_model');
     }
 
     // index view user info
